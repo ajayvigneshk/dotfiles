@@ -117,6 +117,8 @@ bindkey '^w' backward-kill-word
 bindkey '^r' history-incremental-search-backward
 
 bindkey '^ ' forward-word
+bindkey '^A' vi-beginning-of-line
+bindkey '^E' vi-end-of-line
 
 KEYTIMEOUT=1
 # Enable vim text Objects as shell functions
