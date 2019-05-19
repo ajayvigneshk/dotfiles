@@ -24,7 +24,7 @@ fi
 if [[ ! -d $ZSH_FOLDER/z ]]; then
   git clone https://github.com/rupa/z.git  $ZSH_FOLDER/z
 fi
-
+PROMPT_LEAN_VIMODE=true
 if [[ ! -d $ZSH_FOLDER/lean ]]; then
   git clone https://github.com/miekg/lean.git $ZSH_FOLDER/lean
 fi
@@ -41,13 +41,13 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=3' ##Orangish
 #
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
-zstyle :compinstall filename '/Users/ajayvk/.zshrc'
+zstyle :compinstall filename '/Users/ajayk/.zshrc'
 
 autoload -Uz compinit promptinit
 compinit
 promptinit
 # End of lines added by compinstall
-export PATH="/usr/local/sbin:$PATH"
+export PATH="/usr/local/sbin:$PATH:/Users/ajayk/go/bin"
 # Manually added
 ## Source http://zshwiki.org/home/zle/bindkeys
 
@@ -175,6 +175,9 @@ _gen_fzf_default_opts() {
 }
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_COMPLETION_TRIGGER=''
+## External dependency 'rg'
+export FZF_DEFAULT_COMMAND='rg --files'
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 bindkey '^T' fzf-completion
 bindkey '^I' $fzf_default_completion
 _gen_fzf_default_opts
