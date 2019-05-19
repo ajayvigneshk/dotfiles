@@ -92,6 +92,8 @@ if (( ${+terminfo[smkx]} )) && (( ${+terminfo[rmkx]} )); then
     autoload -Uz up-line-or-beginning-search down-line-or-beginning-search
     zle -N up-line-or-beginning-search
     zle -N down-line-or-beginning-search
+    autoload  edit-command-line
+    zle -N edit-command-line
 fi
 ## End Source zshwiki
 ## Source : Arch Wiki
@@ -119,6 +121,7 @@ bindkey '^r' history-incremental-search-backward
 bindkey '^ ' forward-word
 bindkey '^A' vi-beginning-of-line
 bindkey '^E' vi-end-of-line
+bindkey -M vicmd '^V' edit-command-line
 
 KEYTIMEOUT=1
 # Enable vim text Objects as shell functions

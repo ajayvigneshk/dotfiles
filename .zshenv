@@ -1,4 +1,5 @@
 export GOPATH="$HOME/go"
+export EDITOR="nvim"
 export PATH="/usr/local/sbin:$PATH:$GOPATH/bin"
 _gen_fzf_default_opts() {
   local base03="234"
