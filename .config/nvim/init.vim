@@ -7,7 +7,6 @@ Plug 'autozimu/LanguageClient-neovim', {
     \ 'for': 'rust',
     \ }
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-"Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
 " (Optional) Multi-entry selection UI.
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
