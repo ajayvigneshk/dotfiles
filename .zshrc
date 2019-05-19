@@ -125,19 +125,32 @@ bindkey -M vicmd '^V' edit-command-line
 
 KEYTIMEOUT=1
 # Enable vim text Objects as shell functions
-## src: http://zshwiki.org/home/zle/vi-mode
-autoload -U select-bracketed select-quoted
+## src: https://www.reddit.com/r/vim/comments/4995nr/navigate_your_command_line_with_modal_vi/d0qmcbl?utm_source=share&utm_medium=web2x
+#enable parens, quotes and surround text-objects
+autoload -U select-bracketed
 zle -N select-bracketed
+for m in visual viopp; do
+	for c in {a,i}${(s..)^:-'()[]{}<>bB'}; do
+		bindkey -M $m $c select-bracketed
+	done
+done
+
+autoload -U select-quoted
 zle -N select-quoted
-for km in viopp visual; do
-  bindkey -M $km -- '-' vi-up-line-or-history
-  for c in {a,i}"${(s..):-\'\"\`\|,./:;+@}"; do
-    bindkey -M $km $c select-quoted
-  done
-  for c in {a,i}${(s..):-'()[]{}<>bB'}; do
-    bindkey -M $km $c select-bracketed
+for m in visual viopp; do
+  for c in {a,i}{\',\",\`}; do
+	bindkey -M $m $c select-quoted
   done
 done
+
+#autoload -Uz surround
+#zle -N delete-surround surround
+#zle -N change-surround surround
+#zle -N add-surround surround
+#bindkey -a cs change-surround
+#bindkey -a ds delete-surround
+#bindkey -a ys add-surround
+#bindkey -M visual S add-surround
 
 ## Aliases
 alias ls='ls -G' ##Mac OS X Only. TODO conditionalize
