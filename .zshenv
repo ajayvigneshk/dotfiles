@@ -1,0 +1,9 @@
+export GOPATH="$HOME/go"
+export EDITOR="nvim"
+export PATH="/usr/local/sbin:$PATH:$GOPATH/bin"
+export PROMPT_LEAN_VIMODE=true
+export FZF_COMPLETION_TRIGGER=''
+export FZF_DEFAULT_COMMAND='rg --files'
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export PATH="/usr/local/opt/icu4c/bin:$PATH"
+export PATH="/usr/local/opt/icu4c/sbin:$PATH"

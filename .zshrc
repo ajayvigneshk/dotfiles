@@ -1,6 +1,7 @@
 # Lines configured by zsh-newuser-install
 # List Requirements Here
 ## git
+## rg
 #
 
 # Set shell variables
@@ -24,7 +25,6 @@ fi
 if [[ ! -d $ZSH_FOLDER/z ]]; then
   git clone https://github.com/rupa/z.git  $ZSH_FOLDER/z
 fi
-PROMPT_LEAN_VIMODE=true
 if [[ ! -d $ZSH_FOLDER/lean ]]; then
   git clone https://github.com/miekg/lean.git $ZSH_FOLDER/lean
 fi
@@ -47,7 +47,6 @@ autoload -Uz compinit promptinit
 compinit
 promptinit
 # End of lines added by compinstall
-export PATH="/usr/local/sbin:$PATH:/Users/ajayk/go/bin"
 # Manually added
 ## Source http://zshwiki.org/home/zle/bindkeys
 
@@ -155,6 +154,8 @@ done
 
 ## Aliases
 alias ls='ls -G' ##Mac OS X Only. TODO conditionalize
+alias config='/usr/bin/git --git-dir=/Users/ajayk/.cfg/ --work-tree=/Users/ajayk'
+
 HISTFILE=~/.histfile
 HISTSIZE=10000
 SAVEHIST=10000
@@ -163,11 +164,6 @@ setopt histsavenodups
 fpath=( ~/.config/zsh/functions "${fpath[@]}" )
 autoload -Uz fzfdefaultopts
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-export FZF_COMPLETION_TRIGGER=''
-## External dependency 'rg'
-export FZF_DEFAULT_COMMAND='rg --files'
-export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 bindkey '^T' fzf-completion
 bindkey '^I' $fzf_default_completion
 fzfdefaultopts
-alias config='/usr/bin/git --git-dir=/Users/ajayk/.cfg/ --work-tree=/Users/ajayk'
