@@ -5,13 +5,13 @@
 #
 
 # Set shell variables
-ZSH_FOLDER="$HOME/.zsh"
+ZSH_FOLDER="$HOME/.local/share/zsh/plugins"
 VIM_FOLDER="$HOME/.vim"
 
 ## external plugins
 # Create zsh folder and install plugins
 if [[ ! -d $ZSH_FOLDER ]]; then
-  mkdir $ZSH_FOLDER
+  mkdir -p $ZSH_FOLDER
 fi
 
 if [[ ! -d $ZSH_FOLDER/zsh-autosuggestions ]]; then
