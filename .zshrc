@@ -14,6 +14,9 @@ if [[ ! -d $ZSH_FOLDER ]]; then
   mkdir -p $ZSH_FOLDER
 fi
 
+if [[ ! -d $NVM_DIR ]]; then
+  mkdir -p $NVM_DIR
+fi
 if [[ ! -d $ZSH_FOLDER/zsh-autosuggestions ]]; then
   git clone https://github.com/zsh-users/zsh-autosuggestions.git $ZSH_FOLDER/zsh-autosuggestions
 fi
@@ -167,3 +170,4 @@ autoload -Uz fzfdefaultopts
 bindkey '^T' fzf-completion
 bindkey '^I' $fzf_default_completion
 fzfdefaultopts
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
