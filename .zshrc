@@ -6,40 +6,38 @@
 ## Uncomment to profile the config
 #zmodload zsh/zprof
 # Set shell variables
-ZSH_FOLDER="$HOME/.local/share/zsh/plugins"
-VIM_FOLDER="$HOME/.vim"
 
 ## external plugins
 # Create zsh folder and install plugins
-if [[ ! -d $ZSH_FOLDER ]]; then
-  mkdir -p $ZSH_FOLDER
+if [[ ! -d $ZSH_PLUGINS_DIR ]]; then
+  mkdir -p $ZSH_PLUGINS_DIR
 fi
 
 if [[ ! -d $NVM_DIR ]]; then
   mkdir -p $NVM_DIR
 fi
-if [[ ! -d $ZSH_FOLDER/zsh-autosuggestions ]]; then
-  git clone https://github.com/zsh-users/zsh-autosuggestions.git $ZSH_FOLDER/zsh-autosuggestions
+if [[ ! -d $ZSH_PLUGINS_DIR/zsh-autosuggestions ]]; then
+  git clone https://github.com/zsh-users/zsh-autosuggestions.git $ZSH_PLUGINS_DIR/zsh-autosuggestions
 fi
 
-if [[ ! -d $ZSH_FOLDER/zsh-syntax-highlighting ]]; then
-  git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_FOLDER/zsh-syntax-highlighting
+if [[ ! -d $ZSH_PLUGINS_DIR/zsh-syntax-highlighting ]]; then
+  git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_PLUGINS_DIR/zsh-syntax-highlighting
 fi
 
-if [[ ! -d $ZSH_FOLDER/z ]]; then
-  git clone https://github.com/rupa/z.git  $ZSH_FOLDER/z
+if [[ ! -d $ZSH_PLUGINS_DIR/z ]]; then
+  git clone https://github.com/rupa/z.git  $ZSH_PLUGINS_DIR/z
 fi
-if [[ ! -d $ZSH_FOLDER/lean ]]; then
-  git clone https://github.com/miekg/lean.git $ZSH_FOLDER/lean
+if [[ ! -d $ZSH_PLUGINS_DIR/lean ]]; then
+  git clone https://github.com/miekg/lean.git $ZSH_PLUGINS_DIR/lean
 fi
 
 # Source plugins
-source $ZSH_FOLDER/zsh-autosuggestions/zsh-autosuggestions.zsh
-source $ZSH_FOLDER/lean/lean.plugin.zsh
-source $ZSH_FOLDER/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source $ZSH_PLUGINS_DIR/zsh-autosuggestions/zsh-autosuggestions.zsh
+source $ZSH_PLUGINS_DIR/lean/lean.plugin.zsh
+source $ZSH_PLUGINS_DIR/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=3' ##Orangish
 
-. $ZSH_FOLDER/z/z.sh
+. $ZSH_PLUGINS_DIR/z/z.sh
 ## End of external plugins
 ## opt is case, symbol stripped
 #
