@@ -3,7 +3,8 @@
 ## git
 ## rg
 #
-
+## Uncomment to profile the config
+#zmodload zsh/zprof
 # Set shell variables
 ZSH_FOLDER="$HOME/.local/share/zsh/plugins"
 VIM_FOLDER="$HOME/.vim"
@@ -170,4 +171,11 @@ autoload -Uz fzfdefaultopts
 bindkey '^T' fzf-completion
 bindkey '^I' $fzf_default_completion
 fzfdefaultopts
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
+## load individual config files
+typeset -U config_files
+config_files=($DOTFILES/zsh/*.zsh)
+# load config files
+for file in ${config_files}
+do
+  source $file
+done
