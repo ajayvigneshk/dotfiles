@@ -37,7 +37,7 @@ source $ZSH_PLUGINS_DIR/lean/lean.plugin.zsh
 source $ZSH_PLUGINS_DIR/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=3' ##Orangish
 
-. $ZSH_PLUGINS_DIR/z/z.sh
+source $ZSH_PLUGINS_DIR/z/z.sh
 ## End of external plugins
 ## opt is case, symbol stripped
 #
