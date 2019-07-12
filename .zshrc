@@ -30,6 +30,10 @@ fi
 if [[ ! -d $ZSH_PLUGINS_DIR/lean ]]; then
   git clone https://github.com/miekg/lean.git $ZSH_PLUGINS_DIR/lean
 fi
+##Install tpm
+if [[ ! -d $TMUX_PLUGINS_DIR/tpm ]]; then
+  git clone https://github.com/tmux-plugins/tpm $TMUX_PLUGINS_DIR/tpm
+fi
 
 # Source plugins
 source $ZSH_PLUGINS_DIR/zsh-autosuggestions/zsh-autosuggestions.zsh
