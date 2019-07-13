@@ -181,3 +181,6 @@ for file in ${config_files}
 do
   source $file
 done
+if [ -z "$TMUX" ]; then
+    tmux attach -t default || tmux new -s default
+fi
