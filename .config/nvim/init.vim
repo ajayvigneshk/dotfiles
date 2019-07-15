@@ -15,6 +15,8 @@ Plug 'altercation/vim-colors-solarized'
 Plug 'mcchrish/nnn.vim'
 Plug 'morhetz/gruvbox'
 Plug 'lifepillar/vim-solarized8'
+Plug 'itchyny/lightline.vim'
+Plug 'edkolev/tmuxline.vim'
 
 call plug#end()
 
@@ -27,6 +29,7 @@ syntax on
 
 set path+=**
 set wildmenu
+set noshowmode
 
 let g:deoplete#enable_at_startup = 1
 so ~/.config/nvim/rcplugins/lspshortcuts.func
@@ -37,4 +40,7 @@ if exists('+termguicolors')
 endif
 " Solarized vim config
 set background=dark
-colorscheme solarized8_flat
+colorscheme solarized8
+let g:lightline = {
+      \ 'colorscheme': 'solarized',
+      \ }
