@@ -30,6 +30,7 @@ syntax on
 set path+=**
 set wildmenu
 set noshowmode
+set incsearch
 
 let g:deoplete#enable_at_startup = 1
 so ~/.config/nvim/rcplugins/lspshortcuts.func
