@@ -1,11 +1,7 @@
 let mapleader = " "
 call plug#begin('~/.local/share/nvim/plugged')
 
-Plug 'autozimu/LanguageClient-neovim', {
-    \ 'branch': 'next',
-    \ 'do': 'bash install.sh',
-    \ 'for': 'rust',
-    \ }
+Plug 'autozimu/LanguageClient-neovim', {  'branch': 'next',  'do': 'bash install.sh',  'for': ['go','rust']  }
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 " (Optional) Multi-entry selection UI.
 Plug '/usr/local/opt/fzf'
