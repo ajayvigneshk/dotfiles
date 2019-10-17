@@ -12,4 +12,7 @@ let g:LanguageClient_loggingLevel = 'INFO'
 let g:LanguageClient_loggingFile =  expand('~/.local/share/nvim/LanguageClient.log')
 let g:LanguageClient_serverStderr = expand('~/.local/share/nvim/LanguageServer.log')
 
+inoremap <buffer> {<cr> {<cr>}<c-o>O
+let g:rustfmt_autosave = 1
+
 call SetLSPShortcuts()
