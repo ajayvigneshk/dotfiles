@@ -6,13 +6,10 @@ Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 " (Optional) Multi-entry selection UI.
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
-"Plug 'Shougo/denite.nvim'
-"Plug 'altercation/vim-colors-solarized'
 Plug 'mcchrish/nnn.vim'
 "Plug 'morhetz/gruvbox'
 Plug 'lifepillar/vim-solarized8'
 Plug 'itchyny/lightline.vim'
-"Plug 'edkolev/tmuxline.vim'
 
 call plug#end()
 
