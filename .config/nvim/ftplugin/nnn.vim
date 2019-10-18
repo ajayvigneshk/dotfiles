@@ -7,6 +7,7 @@ function! CopyLinestoRegister(lines)
   let @+ = joined_lines
 endfunction
 let g:nnn#action = {
+	\ '<c-e>': 'edit',
 	\ '<c-t>': 'tab split',
 	\ '<c-x>': 'split',
 	\ '<c-v>': 'vsplit',

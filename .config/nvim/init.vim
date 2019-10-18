@@ -28,6 +28,9 @@ set wildmenu
 set noshowmode
 set incsearch
 
+"FZF
+source ~/.config/nvim/fzf.vim
+
 let g:deoplete#enable_at_startup = 1
 so ~/.config/nvim/rcplugins/lspshortcuts.func
 if exists('+termguicolors')
