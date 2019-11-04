@@ -127,7 +127,8 @@ bindkey '^r' history-incremental-search-backward
 bindkey '^ ' forward-word
 bindkey '^A' vi-beginning-of-line
 bindkey '^E' vi-end-of-line
-bindkey -M vicmd '^V' edit-command-line
+bindkey '^xe' edit-command-line
+bindkey '^x^e' edit-command-line
 
 KEYTIMEOUT=1
 # Enable vim text Objects as shell functions
