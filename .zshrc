@@ -166,7 +166,7 @@ HISTFILE=~/.histfile
 HISTSIZE=10000
 SAVEHIST=10000
 setopt appendhistory hist_ignore_space hist_ignore_all_dups histsavenodups
-setopt histsavenodups
+setopt histsavenodups histignorespace
 fpath=( ~/.config/zsh/functions "${fpath[@]}" )
 autoload -Uz fzfdefaultopts
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
