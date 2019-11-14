@@ -24,7 +24,6 @@ set path+=**
 set wildmenu
 set noshowmode
 set incsearch
-set clipboard+=unnamedplus
 
 "FZF
 source ~/.config/nvim/fzf.vim
