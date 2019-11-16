@@ -36,7 +36,7 @@ if exists('+termguicolors')
   set termguicolors
 endif
 " Solarized vim config
-set background=dark
+set background=@@background@@
 colorscheme solarized8
 let g:lightline = {
       \ 'colorscheme': 'solarized',
