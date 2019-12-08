@@ -1,3 +1,10 @@
+packadd LanguageClient-neovim
+packadd deoplete.nvim
+packadd echodoc.vim
+LanguageClientStart
+call deoplete#enable()
+EchoDocEnable
+
 setlocal hidden
 setlocal number
 " Always draw sign column. Prevent buffer moving when adding/deleting sign.
@@ -17,3 +24,8 @@ inoremap <buffer> {<cr> {<cr>}<c-o>O
 autocmd BufWritePre *.go :call LanguageClient#textDocument_formatting_sync()
 
 call SetLSPShortcuts()
+let g:echodoc#enable_at_startup = 1
+let g:echodoc#type = 'floating'
+" To use a custom highlight for the float window,
+" change Pmenu to your highlight group
+highlight link EchoDocFloat Pmenu
