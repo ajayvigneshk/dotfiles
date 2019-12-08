@@ -1,17 +1,13 @@
 let mapleader = " "
-call plug#begin('~/.local/share/nvim/plugged')
 
-Plug 'autozimu/LanguageClient-neovim', {  'branch': 'next',  'do': 'bash install.sh',  'for': ['go','rust']  }
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-" (Optional) Multi-entry selection UI.
-Plug '/usr/local/opt/fzf'
-Plug 'junegunn/fzf.vim'
-Plug 'mcchrish/nnn.vim'
-"Plug 'morhetz/gruvbox'
-Plug 'lifepillar/vim-solarized8'
-Plug 'itchyny/lightline.vim'
+source ~/.config/nvim/minpac.vim
+" Define user commands for updating/cleaning the plugins.
+" Each of them calls PackInit() to load minpac and register
+" the information of plugins, then performs the task.
+command! PackUpdate call PackInit() | call minpac#update('', {'do': 'call minpac#status()'})
+command! PackClean  call PackInit() | call minpac#clean()
+command! PackStatus call PackInit() | call minpac#status()
 
-call plug#end()
 
 if version >= 600
     filetype plugin indent on
@@ -26,9 +22,9 @@ set noshowmode
 set incsearch
 
 "FZF
+set rtp+=/usr/local/opt/fzf
 source ~/.config/nvim/fzf.vim
 
-let g:deoplete#enable_at_startup = 1
 so ~/.config/nvim/rcplugins/lspshortcuts.func
 if exists('+termguicolors')
   let &t_8f="\<Esc>[38;2;%lu;%lu;%lum"

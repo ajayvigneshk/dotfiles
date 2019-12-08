@@ -34,6 +34,10 @@ fi
 if [[ ! -d $TMUX_PLUGINS_DIR/tpm ]]; then
   git clone https://github.com/tmux-plugins/tpm $TMUX_PLUGINS_DIR/tpm
 fi
+## Install minpac
+if [[ ! -d $HOME/.config/nvim/pack/minpac/opt/minpac ]]; then
+  git clone https://github.com/k-takata/minpac.git $HOME/.config/nvim/pack/minpac/opt/minpac
+fi
 
 # Source plugins
 source $ZSH_PLUGINS_DIR/zsh-autosuggestions/zsh-autosuggestions.zsh
