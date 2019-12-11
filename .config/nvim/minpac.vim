@@ -8,5 +8,7 @@ function! PackInit() abort
 	call minpac#add('mcchrish/nnn.vim')
 	call minpac#add('lifepillar/vim-solarized8')
 	call minpac#add('itchyny/lightline.vim')
+	call minpac#add('tpope/vim-surround')
+	call minpac#add('tpope/vim-unimpaired')
 	call minpac#add('Shougo/echodoc.vim', {'type': 'opt'})
 endfunction
