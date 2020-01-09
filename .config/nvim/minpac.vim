@@ -10,5 +10,6 @@ function! PackInit() abort
 	call minpac#add('itchyny/lightline.vim')
 	call minpac#add('tpope/vim-surround')
 	call minpac#add('tpope/vim-unimpaired')
+	call minpac#add('tpope/vim-repeat')
 	call minpac#add('Shougo/echodoc.vim', {'type': 'opt'})
 endfunction
