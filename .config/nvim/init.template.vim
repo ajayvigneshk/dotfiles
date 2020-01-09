@@ -37,5 +37,7 @@ colorscheme solarized8
 let g:lightline = {
       \ 'colorscheme': 'solarized',
       \ }
+"Set undofile option for undo persistence
+set undofile
 set grepprg=rg\ --vimgrep\ --no-heading
 set grepformat=%f:%l:%c:%m,%f:%l:%m
