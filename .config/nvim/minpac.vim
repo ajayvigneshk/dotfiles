@@ -12,4 +12,5 @@ function! PackInit() abort
 	call minpac#add('tpope/vim-unimpaired')
 	call minpac#add('tpope/vim-repeat')
 	call minpac#add('Shougo/echodoc.vim', {'type': 'opt'})
+	call minpac#add('skywind3000/asyncrun.vim')
 endfunction
