@@ -43,3 +43,4 @@ set grepprg=rg\ --vimgrep\ --no-heading
 set grepformat=%f:%l:%c:%m,%f:%l:%m
 "Enable switching buffers without saving
 set hidden
+source ~/.config/nvim/custom/Grep.vim
