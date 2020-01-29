@@ -1,3 +1,5 @@
+set grepprg=rg\ --vimgrep\ --no-heading
+set grepformat=%f:%l:%c:%m,%f:%l:%m
 nmap <C-s>f :Grep<Up><C-s><F1>
 command! -nargs=* Grep AsyncRun -program=grep @ <args> 
 cnoremap <C-s><F1> <C-\>ePadQuotes()<CR>
