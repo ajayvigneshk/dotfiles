@@ -1,11 +1,22 @@
-nnoremap <M-s-f> :Grep ""<Up><Left>
+nmap <C-s>f :Grep<Up><C-s><F1>
 command! -nargs=* Grep AsyncRun -program=grep @ <args> 
-cnoremap <M-i> <C-\>eAddOpts('i')<CR>
-cnoremap <M-w> <C-\>eAddOpts('w')<CR>
-cnoremap <M-g> <C-\>eAddOpts('g')<CR>
-cnoremap <M-S-i> <C-\>eRemoveOpts('i')<CR>
-cnoremap <M-S-w> <C-\>eRemoveOpts('w')<CR>
-cnoremap <M-S-g> <C-\>eRemoveOpts('g')<CR>
+cnoremap <C-s><F1> <C-\>ePadQuotes()<CR>
+cnoremap <C-s>i <C-\>eAddOpts('i')<CR>
+cnoremap <C-s>w <C-\>eAddOpts('w')<CR>
+cnoremap <C-s>g <C-\>eAddOpts('g')<CR>
+cnoremap <C-s><C-i> <C-\>eRemoveOpts('i')<CR>
+cnoremap <C-s><C-w> <C-\>eRemoveOpts('w')<CR>
+cnoremap <C-s><C-g> <C-\>eRemoveOpts('g')<CR>
+function PadQuotes()
+	let cmdline = getcmdline()
+	if strridx(cmdline,"\"")+1!=strlen(cmdline)
+		let cmdline = cmdline . " \"\""
+	else
+		let cmdline = cmdline
+	endif
+	call setcmdpos(strlen(cmdline))
+	return cmdline
+endfunction
 function AddOpts(parameter)
 	let updatedcmdline=getcmdline()
 	if stridx(updatedcmdline,"Grep")!=0
@@ -19,18 +30,19 @@ function AddOpts(parameter)
 		let existingfiletypes =""
 		if filetypesexists!=-1
 			let idxofnextsinglequote=stridx(updatedcmdline,"'",filetypesexists+4)
-			let existingfiletypes=strpart(updatedcmdline, filetypesexists+5,idxofnextsinglequote-(filetypesexists+6)) . ","
+			let existingfiletypes=strpart(updatedcmdline, filetypesexists+7,idxofnextsinglequote-(filetypesexists+8)) . ","
 			let updatedcmdline =RemoveOpts("g")
 		endif
-		let filetypes = input("FileTypes(eg: *.rs,!*.go): ", existingfiletypes ) "Todo custom completion
+		let filetypes = input("FileTypes(eg: rs,!go): ", existingfiletypes ) "Todo custom completion
 		if strridx(filetypes,",")+1==strlen(filetypes)
 			let filetypes=strpart(filetypes,0,strlen(filetypes)-1)
 		endif
 		if filetypes!="" 
-			let paramtext=" -" . a:parameter . " '{" . filetypes . "}'"
+			let paramtext=" -" . a:parameter . " '*.{" . filetypes . "}'"
 		endif
 	elseif idxofparameter==-1
 		let paramtext=" -" . a:parameter
+		echom paramtext
 	endif
 	let updatedcmdline=strpart(updatedcmdline,0,4) . paramtext . strpart(updatedcmdline,4)
 	call setcmdpos(strlen(updatedcmdline))
