@@ -42,3 +42,4 @@ set undofile
 "Enable switching buffers without saving
 set hidden
 source ~/.config/nvim/custom/Grep.vim
+source ~/.config/nvim/custom/tabsandpanes.vim
