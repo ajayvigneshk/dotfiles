@@ -6,9 +6,11 @@ cnoremap <C-s><F1> <C-\>ePadQuotes()<CR>
 cnoremap <C-s>i <C-\>eAddOpts('i')<CR>
 cnoremap <C-s>w <C-\>eAddOpts('w')<CR>
 cnoremap <C-s>g <C-\>eAddOpts('g')<CR>
+cnoremap <C-s>f <C-\>eAddOpts('F')<CR>
 cnoremap <C-s><C-i> <C-\>eRemoveOpts('i')<CR>
 cnoremap <C-s><C-w> <C-\>eRemoveOpts('w')<CR>
 cnoremap <C-s><C-g> <C-\>eRemoveOpts('g')<CR>
+cnoremap <C-s><C-f> <C-\>eRemoveOpts('F')<CR>
 function PadQuotes()
 	let cmdline = getcmdline()
 	if strridx(cmdline,"\"")+1!=strlen(cmdline)
