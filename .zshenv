@@ -1,6 +1,6 @@
 export GOPATH="$HOME/go"
-export EDITOR='nvim'
-export VISUAL='nvim'
+export EDITOR='nvr -cc split --remote-wait'
+export VISUAL='nvr -cc split --remote-wait'
 export PATH="/usr/local/sbin:$PATH:$GOPATH/bin"
 export PROMPT_LEAN_VIMODE=true
 export FZF_COMPLETION_TRIGGER=''
