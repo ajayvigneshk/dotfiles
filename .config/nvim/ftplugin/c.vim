@@ -1,6 +1,7 @@
 packadd LanguageClient-neovim
 packadd deoplete.nvim
 packadd echodoc.vim
+let g:LanguageClient_selectionUI="quickfix"
 LanguageClientStart
 call deoplete#enable()
 EchoDocEnable
