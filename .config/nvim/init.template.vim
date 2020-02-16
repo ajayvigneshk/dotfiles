@@ -41,5 +41,6 @@ let g:lightline = {
 set undofile
 "Enable switching buffers without saving
 set hidden
+set cursorline
 source ~/.config/nvim/custom/Grep.vim
 source ~/.config/nvim/custom/tabsandpanes.vim
