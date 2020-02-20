@@ -1,6 +1,7 @@
 export GOPATH="$HOME/go"
-export EDITOR='nvr -cc split --remote-wait'
-export VISUAL='nvr -cc split --remote-wait'
+export EDITOR="/usr/local/bin/nvr --remote-tab-wait '+set bufhidden=delete'"
+export VISUAL="nvr --remote-tab-wait '+set bufhidden=delete'"
+export EDITOR_NO_WAIT="nvr"
 export PATH="/usr/local/sbin:$PATH:$GOPATH/bin"
 export PROMPT_LEAN_VIMODE=true
 export FZF_COMPLETION_TRIGGER=''
