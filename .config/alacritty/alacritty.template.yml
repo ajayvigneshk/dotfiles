@@ -521,6 +521,15 @@ key_bindings:
   # Custom 
   - { key: Tab,    mods: Control,        chars: "\x1b[27;5;9~" }
   - { key: Tab,    mods: Control|Shift,  chars: "\x1b[27;6;9~" }
+  # Shift-F1 (in mac) is F13, mapping CMD T to it.
+  - { key: T,      mods: Command,        chars: "\x1b[1;2P"       }
+  - { key: W,      mods: Command,        chars: "\x1b[1;2Q"       }
+  - { key: D,      mods: Command,        chars: "\x1b[1;2R"       }
+  - { key: D,      mods: Command|Shift,  chars: "\x1b[1;2S"       }
+  - { key: LBracket,mods: Command,       chars: "\x1b[15;2~"      }
+  - { key: RBracket,mods: Command,       chars: "\x1b[17;2~"      }
+    #- { key: Return,  mods: Command,       chars: "\x1b[18;2~"      }
+    #- { key: Return,  mods: Command|Shift, chars: "\x1b[19;2~"      }
   # (macOS only)
   - { key: Key0,   mods: Command,         action: ResetFontSize    }
   - { key: Equals, mods: Command,         action: IncreaseFontSize }
@@ -533,7 +542,6 @@ key_bindings:
   - { key: H,      mods: Command,         action: Hide             }
   - { key: M,      mods: Command,         action: Minimize         }
   - { key: Q,      mods: Command,         action: Quit             }
-  - { key: W,      mods: Command,         action: Quit             }
   - { key: F,      mods: Command|Control, action: ToggleFullscreen }
 
   - { key: Paste,                    action: Paste                            }
