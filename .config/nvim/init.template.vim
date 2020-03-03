@@ -20,6 +20,7 @@ set path+=**
 set wildmenu
 set noshowmode
 set incsearch
+set ignorecase smartcase
 
 "FZF
 set rtp+=/usr/local/opt/fzf
