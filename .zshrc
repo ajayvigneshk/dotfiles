@@ -186,9 +186,9 @@ for file in ${config_files}
 do
   source $file
 done
-if [ -z "$TMUX" ]; then
-    tmux attach -t default || tmux new -s default
-fi
+#if [ -z "$TMUX" ]; then
+#    tmux attach -t default || tmux new -s default
+#fi
 if [[ ! (-f $HOME/.config/alacritty/alacritty.yml && -f $HOME/.config/nvim/init.vim && -f $HOME/.tmux.conf)  ]]; then
     $HOME/.config/myscripts/detemplatise.sh dark
 fi
