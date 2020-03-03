@@ -11,11 +11,14 @@ export PATH="/usr/local/opt/icu4c/bin:$PATH"
 export PATH="/usr/local/opt/icu4c/sbin:$PATH"
 export PATH="/usr/local/opt/llvm/bin:$PATH"
 export PATH="/Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home/bin/java:$PATH"
+export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
 export ANDROID_HOME=$HOME/Library/Android/sdk
 export PATH=$PATH:$ANDROID_HOME/emulator
 export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/tools/bin
 export PATH=$PATH:$ANDROID_HOME/platform-tools
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
 export NVM_DIR="$HOME/.nvm"
 export DOTFILES="$HOME/.config"
 export ZSH_PLUGINS_DIR="$HOME/.local/share/zsh/plugins"
