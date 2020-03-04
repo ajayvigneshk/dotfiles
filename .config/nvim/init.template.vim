@@ -36,7 +36,7 @@ endif
 set background=@@background@@
 colorscheme solarized8
 let g:lightline = {
-      \ 'colorscheme': 'solarized',
+      \ 'colorscheme': 'material',
       \ }
 "Set undofile option for undo persistence
 set undofile
