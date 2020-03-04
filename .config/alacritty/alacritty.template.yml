@@ -359,7 +359,7 @@ shell:
   args:
     - -l
     - -c
-    - "abduco -c nvrsession nvr -cc \"term\" || abduco -a nvrsession"
+    - "abduco -A nvrsession nvr -cc \"term\""
 
 # Startup directory
 #
