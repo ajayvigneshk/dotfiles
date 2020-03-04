@@ -34,7 +34,7 @@ if exists('+termguicolors')
 endif
 " Solarized vim config
 set background=@@background@@
-colorscheme solarized8
+colorscheme solarized8_flat
 let g:lightline = {
       \ 'colorscheme': 'material',
       \ }
