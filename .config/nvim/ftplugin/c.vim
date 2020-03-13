@@ -16,7 +16,7 @@ let g:LanguageClient_serverCommands = {
   \ 'c': ['clangd'],
   \ 'cpp': ['clangd'],
   \ }
-let g:LanguageClient_loggingLevel = 'DEBUG'
+let g:LanguageClient_loggingLevel = 'INFO'
 let g:LanguageClient_loggingFile =  expand('~/.local/share/nvim/LanguageClient.log')
 let g:LanguageClient_serverStderr = expand('~/.local/share/nvim/LanguageServer.log')
 

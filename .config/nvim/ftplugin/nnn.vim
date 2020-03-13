@@ -12,5 +12,3 @@ let g:nnn#action = {
 	\ '<c-x>': 'split',
 	\ '<c-v>': 'vsplit',
 	\ '<c-o>': function('CopyLinestoRegister') }
-
-
