@@ -19,7 +19,6 @@ syntax on
 set path+=**
 set wildmenu
 set noshowmode
-set incsearch
 set ignorecase smartcase
 
 "FZF
