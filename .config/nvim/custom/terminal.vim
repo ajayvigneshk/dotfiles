@@ -15,6 +15,7 @@ augroup terminalgroup
  autocmd!
  autocmd TermOpen * :startinsert 
  autocmd BufEnter * if &buftype == 'terminal' | :call StartInPreviousMode() | endif
+ autocmd BufHidden * if &buftype == 'terminal' | let b:mode="normal" | endif
  autocmd TextYankPost * if &buftype == 'terminal' | let @*=@" | :startinsert | endif
 augroup END
 "General
