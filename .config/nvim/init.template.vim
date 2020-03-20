@@ -45,3 +45,7 @@ set cursorline
 source ~/.config/nvim/custom/Grep.vim
 "source ~/.config/nvim/custom/tabsandpanes.vim
 "source ~/.config/nvim/custom/terminal.vim
+" Disable default mappings
+let g:nnn#set_default_mappings = 0
+" Start nnn in the current file's directory
+nnoremap <leader>n :NnnPicker '%:p:h'<CR>
