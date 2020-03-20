@@ -43,4 +43,5 @@ set undofile
 set hidden
 set cursorline
 source ~/.config/nvim/custom/Grep.vim
-source ~/.config/nvim/custom/tabsandpanes.vim
+"source ~/.config/nvim/custom/tabsandpanes.vim
+"source ~/.config/nvim/custom/terminal.vim
