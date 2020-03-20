@@ -359,7 +359,7 @@ shell:
   args:
     - -l
     - -c
-    - "abduco -A nvrsession nvr -cc \"term\""
+    - "tmux attach -t default || tmux new -s default"
 
 # Startup directory
 #
