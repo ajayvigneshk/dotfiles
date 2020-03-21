@@ -1,0 +1,27 @@
+set imap_user = "$TW_EMAIL"
+set imap_pass = "$TW_APP_PASS"
+set smtp_url = "smtps://$TW_EMAIL@smtp.gmail.com:465/"
+set smtp_pass = "$TW_APP_PASS"
+set smtp_authenticators = 'gssapi:login'
+set from = "$TW_EMAIL"
+set realname = "Ajay Vignesh K"
+
+set folder = "imaps://$TW_EMAIL@imap.gmail.com:993"
+set spoolfile = "+INBOX"
+set postponed="+[Gmail]/Drafts"
+
+# G to get mail
+bind index G imap-fetch-mail
+set editor = "nvim"
+set charset = "utf-8"
+set record = "imaps://imap.gmail.com/[GMail]/Sent Mail"
+set postponed = "imaps://imap.gmail.com/[GMail]/Drafts"
+set header_cache = "/Users/ajayk/.mutt/cache/headers"
+set message_cachedir = "/Users/ajayk/.mutt/cache/bodies"
+set certificate_file = "/Users/ajayk/.mutt/certificates"
+
+#Niceties
+set sort=threads
+set sort_browser=reverse-date
+set sort_aux=last-date-received
+source ~/.config/mutt/mutt-colors-solarized-dark-16.muttrc

@@ -192,3 +192,4 @@ done
 if [[ ! (-f $HOME/.config/alacritty/alacritty.yml && -f $HOME/.config/nvim/init.vim && -f $HOME/.tmux.conf)  ]]; then
     $HOME/.config/myscripts/detemplatise.sh dark
 fi
+source ~/.aliases
