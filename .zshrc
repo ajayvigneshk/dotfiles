@@ -51,7 +51,7 @@ source $ZSH_PLUGINS_DIR/z/z.sh
 #
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
-zstyle :compinstall filename '/Users/ajayk/.zshrc'
+zstyle :compinstall filename "$HOME/.zshrc"
 
 autoload -Uz compinit promptinit
 compinit
@@ -162,10 +162,6 @@ done
 #bindkey -a ds delete-surround
 #bindkey -a ys add-surround
 #bindkey -M visual S add-surround
-
-## Aliases
-alias ls='ls -G' ##Mac OS X Only. TODO conditionalize
-alias config='/usr/bin/git --git-dir=/Users/ajayk/.cfg/ --work-tree=/Users/ajayk'
 
 HISTFILE=~/.histfile
 HISTSIZE=10000

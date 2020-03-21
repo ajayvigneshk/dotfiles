@@ -16,9 +16,9 @@ set editor = "nvim"
 set charset = "utf-8"
 set record = "imaps://imap.gmail.com/[GMail]/Sent Mail"
 set postponed = "imaps://imap.gmail.com/[GMail]/Drafts"
-set header_cache = "/Users/ajayk/.mutt/cache/headers"
-set message_cachedir = "/Users/ajayk/.mutt/cache/bodies"
-set certificate_file = "/Users/ajayk/.mutt/certificates"
+set header_cache = "~/.mutt/cache/headers"
+set message_cachedir = "~/.mutt/cache/bodies"
+set certificate_file = "~/.mutt/certificates"
 
 #Niceties
 set sort=threads
