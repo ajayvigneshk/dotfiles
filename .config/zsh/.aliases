@@ -2,3 +2,4 @@
 alias ls='ls -G' ##Mac OS X Only. TODO conditionalize
 alias config="/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME"
 alias mutt=~/.config/mutt/mymutt.sh
+alias neomutt=~/.config/mutt/myneomutt.sh
