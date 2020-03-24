@@ -42,10 +42,11 @@ set undofile
 "Enable switching buffers without saving
 set hidden
 set cursorline
-source ~/.config/nvim/custom/Grep.vim
+source $CONFIG_DIR/nvim/custom/Grep.vim
 "source ~/.config/nvim/custom/tabsandpanes.vim
 "source ~/.config/nvim/custom/terminal.vim
 " Disable default mappings
+source $CONFIG_DIR/nvim/pack/minpac/start/vim-sandwich/macros/sandwich/keymap/surround.vim
 let g:nnn#set_default_mappings = 0
 " Start nnn in the current file's directory
 nnoremap <leader>n :NnnPicker '%:p:h'<CR>

@@ -176,7 +176,7 @@ bindkey '^I' $fzf_default_completion
 fzfdefaultopts
 ## load individual config files
 typeset -U config_files
-config_files=($DOTFILES/zsh/*.zsh)
+config_files=($CONFIG_DIR/zsh/*.zsh)
 # load config files
 for file in ${config_files}
 do
