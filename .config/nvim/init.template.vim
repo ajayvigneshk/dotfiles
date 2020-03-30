@@ -47,6 +47,9 @@ source $CONFIG_DIR/nvim/custom/Grep.vim
 "source ~/.config/nvim/custom/terminal.vim
 " Disable default mappings
 source $CONFIG_DIR/nvim/pack/minpac/start/vim-sandwich/macros/sandwich/keymap/surround.vim
+source /Users/ajayk/.config/nvim/vimwiki.vim
 let g:nnn#set_default_mappings = 0
 " Start nnn in the current file's directory
 nnoremap <leader>n :NnnPicker '%:p:h'<CR>
+" vimwiki gpg support
+let g:GPGFilePattern = '*.\(gpg\|asc\|pgp\)\(.wiki\)\='
