@@ -23,3 +23,4 @@ export NVM_DIR="$HOME/.nvm"
 export CONFIG_DIR="$HOME/.config"
 export ZSH_PLUGINS_DIR="$HOME/.local/share/zsh/plugins"
 export TMUX_PLUGINS_DIR="$HOME/.local/share/tmux/plugins"
+export GPG_TTY=`tty`

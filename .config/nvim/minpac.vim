@@ -14,5 +14,6 @@ function! PackInit() abort
 	call minpac#add('tpope/vim-sensible')
 	call minpac#add('Shougo/echodoc.vim', {'type': 'opt'})
 	call minpac#add('skywind3000/asyncrun.vim')
+	call minpac#add('jamessan/vim-gnupg')
 "	call minpac#add('mhinz/neovim-remote')
 endfunction
