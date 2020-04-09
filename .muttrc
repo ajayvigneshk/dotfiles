@@ -25,3 +25,6 @@ set sort=threads
 set sort_browser=reverse-date
 set sort_aux=last-date-received
 source ~/.config/mutt/mutt-colors-solarized-dark-16.muttrc
+
+#GPG
+set crypt_use_gpgme = yes
