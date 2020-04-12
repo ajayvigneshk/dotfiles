@@ -178,6 +178,7 @@ if [[ ! (-f $HOME/.config/alacritty/alacritty.yml && -f $HOME/.config/nvim/init.
     $HOME/.config/myscripts/detemplatise.sh dark
 fi
 source $CONFIG_DIR/zsh/.aliases
+autoload -Uz docker-start docker-stop
 autoload -Uz compinit promptinit
 autoload -Uz kubectl
 compinit
