@@ -19,11 +19,6 @@ fi
 if [[ ! -d $ZSH_PLUGINS_DIR/zsh-autosuggestions ]]; then
   git clone https://github.com/zsh-users/zsh-autosuggestions.git $ZSH_PLUGINS_DIR/zsh-autosuggestions
 fi
-
-if [[ ! -d $ZSH_PLUGINS_DIR/zsh-syntax-highlighting ]]; then
-  git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_PLUGINS_DIR/zsh-syntax-highlighting
-fi
-
 if [[ ! -d $ZSH_PLUGINS_DIR/z ]]; then
   git clone https://github.com/rupa/z.git  $ZSH_PLUGINS_DIR/z
 fi
@@ -53,10 +48,6 @@ source $ZSH_PLUGINS_DIR/z/z.sh
 # The following lines were added by compinstall
 zstyle :compinstall filename "$HOME/.zshrc"
 
-autoload -Uz compinit promptinit
-compinit
-promptinit
-# End of lines added by compinstall
 # Manually added
 ## Source http://zshwiki.org/home/zle/bindkeys
 
@@ -189,3 +180,9 @@ if [[ ! (-f $HOME/.config/alacritty/alacritty.yml && -f $HOME/.config/nvim/init.
     $HOME/.config/myscripts/detemplatise.sh dark
 fi
 source $CONFIG_DIR/zsh/.aliases
+autoload -Uz compinit promptinit
+compinit
+promptinit
+if [[ ! -d $ZSH_PLUGINS_DIR/zsh-syntax-highlighting ]]; then
+  git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_PLUGINS_DIR/zsh-syntax-highlighting
+fi
