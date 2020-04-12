@@ -1,3 +1,4 @@
+export ZSH_AUTOSUGGEST_USE_ASYNC=foo
 export GOPATH="$HOME/go"
 export EDITOR="nvim"
 export VISUAL="nvim"
