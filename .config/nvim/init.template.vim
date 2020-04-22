@@ -22,6 +22,8 @@ set undofile
 "Enable switching buffers without saving
 set hidden
 set cursorline
+" Set yank highlight duration
+let g:highlightedyank_highlight_duration = 500
 "}}}
 "{{{ FZF
 set rtp+=/usr/local/opt/fzf

@@ -359,7 +359,7 @@ shell:
   args:
     - -l
     - -c
-    - "tmux attach -t default || tmux new -s default"
+    - "tmux attach -t personal || tmux new -s personal"
 
 # Startup directory
 #
