@@ -21,7 +21,7 @@ set ignorecase smartcase
 set undofile
 "Enable switching buffers without saving
 set hidden
-set cursorline
+set cursorline cursorcolumn
 " Set yank highlight duration
 let g:highlightedyank_highlight_duration = 500
 "}}}
@@ -43,6 +43,8 @@ set noshowmode
 let g:lightline = {
       \ 'colorscheme': 'material',
       \ }
+" highlight color to magenta
+highlight HighlightedyankRegion guifg=#eee8d5 guibg=#d33682
  "}}}
   "{{{ Source , custom files.
 source ~/.config/nvim/rcplugins/lspshortcuts.func
