@@ -21,6 +21,8 @@ window:
     columns: 0
     lines: 0
 
+  # Allow terminal applications to change Alacritty's window title.
+  dynamic_title: true
   # Window position (changes require restart)
   #
   # Specified in number of pixels.
@@ -86,7 +88,8 @@ scrolling:
   # Specifying `0` will disable faux scrolling.
 
   # Scroll to the bottom when new text is written to the terminal.
-  auto_scroll: false
+  ## Disabled with 0.4.3
+  #auto_scroll: false
 
 # Spaces per Tab (changes require restart)
 #
@@ -95,7 +98,8 @@ scrolling:
 # Some applications, like Emacs, rely on knowing about the width of a tab.
 # To prevent unexpected behavior in these applications, it's also required to
 # change the `it` value in terminfo when altering this setting.
-tabspaces: 8
+## Disabled with 0.4.3
+#tabspaces: 8
 
 # Font configuration (changes require restart)
 font:
@@ -257,10 +261,11 @@ colors: *@@background@@
 #   - Linear
 #
 # Specifying a `duration` of `0` will disable the visual bell.
-visual_bell:
-  animation: EaseOutExpo
-  duration: 0
-  color: '0xffffff'
+# Disabled on 0.5.0
+#visual_bell:
+#  animation: EaseOutExpo
+#  duration: 0
+#  color: '0xffffff'
 
 # Background opacity
 #
@@ -326,8 +331,6 @@ selection:
   # When set to `true`, selected text will be copied to the primary clipboard.
   save_to_clipboard: false
 
-# Allow terminal applications to change Alacritty's window title.
-dynamic_title: true
 
 cursor:
   # Cursor style
