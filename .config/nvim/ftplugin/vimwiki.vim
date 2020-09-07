@@ -1,2 +1,3 @@
 setlocal ts=2 sts=2 sw=2 expandtab
-setlocal nofoldenable
+"setlocal nofoldenable
+"setlocal viewoptions-=folds
