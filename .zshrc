@@ -1,8 +1,4 @@
 # Lines configured by zsh-newuser-install
-# List Requirements Here
-## git
-## rg
-#
 ## Uncomment to profile the config
 #zmodload zsh/zprof
 # Set shell variables

@@ -1,0 +1,9 @@
+## List of requirements. WIP
+git
+fzf
+rg
+tmux
+alacritty
+mutt
+Lang Server installations for go, rust.
+
