@@ -58,7 +58,7 @@ source $CONFIG_DIR/nvim/vimwiki.vim
  "{{{ Nnn
 let g:nnn#set_default_mappings = 0
 " Start nnn in the current file's directory
-nnoremap <leader>n :NnnPicker '%:p:h'<CR>
+nnoremap <leader>n :NnnPicker %:p:h<CR>
  "}}}
 "{{{ vimwiki 
 " gpg support
