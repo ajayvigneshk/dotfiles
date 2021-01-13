@@ -153,6 +153,7 @@ done
 HISTFILE=~/.histfile
 HISTSIZE=10000
 SAVEHIST=10000
+HISTORY_IGNORE="(git log **/*|git clone|nvim)"
 setopt appendhistory hist_ignore_space hist_ignore_all_dups histsavenodups
 setopt histsavenodups histignorespace
 fpath=( ~/.config/zsh/functions "${fpath[@]}" )
