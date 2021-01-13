@@ -64,5 +64,5 @@ nnoremap <leader>n :NnnPicker %:p:h<CR>
 " gpg support
 let g:GPGFilePattern = '*.\(gpg\|asc\|pgp\)\(.wiki\)\='
 " foldmethod
-let g:vimwiki_folding='list:quick'
+let g:vimwiki_folding='syntax:quick'
  "}}}
