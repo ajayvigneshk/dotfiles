@@ -178,6 +178,7 @@ if [[ ! (-f $HOME/.config/alacritty/alacritty.yml && -f $HOME/.config/nvim/init.
 fi
 source $CONFIG_DIR/zsh/.aliases
 autoload -Uz compinit promptinit
+autoload -Uz kubectl
 compinit
 promptinit
 if [[ ! -d $ZSH_PLUGINS_DIR/zsh-syntax-highlighting ]]; then
