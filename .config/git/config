@@ -1,0 +1,15 @@
+[merge]
+	tool = nvimdiff
+[mergetool]
+	prompt = true
+[alias]
+	co = checkout
+	br = branch
+	st = status
+	ci = commit
+[includeif "gitdir:~/.cfg"]
+	path = ~/.config/git/config-dotfiles.inc
+[includeif "gitdir:~/personal/**"]
+	path = ~/.config/git/config-personal.inc
+[include]
+	path = ~/.config/git/config-others.inc
