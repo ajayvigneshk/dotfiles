@@ -66,3 +66,6 @@ let g:GPGFilePattern = '*.\(gpg\|asc\|pgp\)\(.wiki\)\='
 " foldmethod
 let g:vimwiki_folding='syntax:quick'
  "}}}
+"{{{ Asyncrun
+let g:asyncrun_open = 8
+ "}}}
