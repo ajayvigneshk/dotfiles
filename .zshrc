@@ -153,7 +153,7 @@ done
 HISTFILE=~/.histfile
 HISTSIZE=10000
 SAVEHIST=10000
-HISTORY_IGNORE="(git log **/*|git clone|nvim)"
+HISTORY_IGNORE='(docker ps *|(git|config) (restore --staged *|tag *|(checkout|co) *|tag *|show *|clone *|stash*|diff*|(status|st)|commit -m *|add *|log|log [^-]*)|nvim *|man *|mkdir *|mv *|rm *|ls*|f[g,c]|ssh [^-]*|echo *)'
 setopt appendhistory hist_ignore_space hist_ignore_all_dups histsavenodups
 setopt histsavenodups histignorespace
 fpath=( ~/.config/zsh/functions "${fpath[@]}" )
