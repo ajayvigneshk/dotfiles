@@ -57,6 +57,7 @@ source $CONFIG_DIR/nvim/vimwiki.vim
  "}}}
  "{{{ Nnn
 let g:nnn#set_default_mappings = 0
+let g:nnn#replace_netrw = 1
 " Start nnn in the current file's directory
 nnoremap <leader>n :NnnPicker %:p:h<CR>
  "}}}
