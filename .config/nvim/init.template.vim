@@ -47,7 +47,11 @@ let g:lightline = {
 highlight HighlightedyankRegion guifg=#eee8d5 guibg=#d33682
  "}}}
   "{{{ Source , custom files.
-source ~/.config/nvim/rcplugins/lspshortcuts.func
+if has('nvim-0.5')
+	source ~/.config/nvim/rcplugins/lspshortcuts-0.5.func
+elseif has('nvim-0.4')
+	source ~/.config/nvim/rcplugins/lspshortcuts.func
+endif
 source $CONFIG_DIR/nvim/custom/Grep.vim
 "source ~/.config/nvim/custom/tabsandpanes.vim
 "source ~/.config/nvim/custom/terminal.vim
@@ -69,4 +73,16 @@ let g:vimwiki_folding='syntax:quick'
  "}}}
 "{{{ Asyncrun
 let g:asyncrun_open = 8
+ "}}}
+"{{{ autocompletion
+" Use <Tab> and <S-Tab> to navigate through popup menu
+inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+
+" Set completeopt to have a better completion experience
+set completeopt=menuone,noinsert,noselect
+
+" Avoid showing message extra message when using completion
+set shortmess+=c
+let g:completion_enable_auto_popup = 0
  "}}}
