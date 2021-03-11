@@ -5,6 +5,8 @@
 
 ## external plugins
 # Create zsh folder and install plugins
+# This doesn't work with zshenv
+export PATH=$HOME/Downloads/nvim-osx64/bin:$PATH
 if [[ ! -d $ZSH_PLUGINS_DIR ]]; then
   mkdir -p $ZSH_PLUGINS_DIR
 fi
