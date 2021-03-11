@@ -14,10 +14,12 @@ function! PackInit() abort
 	call minpac#add('jamessan/vim-gnupg')
 	call minpac#add('vimwiki/vimwiki')
 	call minpac#add('machakann/vim-highlightedyank')
+	call minpac#add('sirver/ultisnips')
+	call minpac#add('fatih/vim-go')
 	if has('nvim-0.5')
-		call minpac#add('neovim/nvim-lspconfig', {'type':'opt'})
-		call minpac#add('nvim-lua/completion-nvim', {'type':'opt'})
-		call minpac#add('nvim-treesitter/nvim-treesitter', {'type':'opt','do': 'TSUpdate'}) " We recommend updating the parsers on update
+		call minpac#add('neovim/nvim-lspconfig')
+		call minpac#add('nvim-lua/completion-nvim')
+		call minpac#add('nvim-treesitter/nvim-treesitter', {'do': 'TSUpdate'}) " We recommend updating the parsers on update
 	else
 		call minpac#add('autozimu/LanguageClient-neovim', {'type': 'opt','branch': 'next', 'do': '!./install.sh' })
 		call minpac#add('Shougo/deoplete.nvim', {'type': 'opt', 'do': 'UpdateRemotePlugins'})
