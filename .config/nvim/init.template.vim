@@ -74,15 +74,16 @@ let g:vimwiki_folding='syntax:quick'
 "{{{ Asyncrun
 let g:asyncrun_open = 8
  "}}}
-"{{{ autocompletion
-" Use <Tab> and <S-Tab> to navigate through popup menu
-inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+"{{{ autocompletion, completion-nvim
+if has('nvim-0.5')
+	" Set completeopt to have a better completion experience
+	set completeopt=menuone,noinsert,noselect
 
-" Set completeopt to have a better completion experience
-set completeopt=menuone,noinsert,noselect
-
-" Avoid showing message extra message when using completion
-set shortmess+=c
-let g:completion_enable_auto_popup = 0
+	" Avoid showing message extra message when using completion
+	set shortmess+=c
+	let g:completion_enable_auto_popup = 0
+	"" Manually trigger autocompletion
+	imap <silent> <c-p> <Plug>(completion_trigger)
+	let g:completion_enable_snippet = 'UltiSnips'
+endif
  "}}}
