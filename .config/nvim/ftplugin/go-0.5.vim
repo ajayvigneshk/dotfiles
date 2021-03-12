@@ -1,6 +1,10 @@
 packadd nvim-lspconfig
 packadd nvim-treesitter
 packadd completion-nvim
+setlocal hidden
+setlocal number
+" Always draw sign column. Prevent buffer moving when adding/deleting sign.
+setlocal signcolumn=yes
 lua << EOF
 local lspconfig = require'lspconfig'
 lspconfig.gopls.setup{
