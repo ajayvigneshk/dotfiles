@@ -66,6 +66,8 @@ let g:nnn#replace_netrw = 1
 nnoremap <leader>n :NnnPicker %:p:h<CR>
  "}}}
 "{{{ vimwiki 
+" Do not set filetype outside vimwiki directory
+let g:vimwiki_global_ext = 0
 " gpg support
 let g:GPGFilePattern = '*.\(gpg\|asc\|pgp\)\(.wiki\)\='
 " foldmethod
@@ -84,6 +86,13 @@ if has('nvim-0.5')
 	let g:completion_enable_auto_popup = 0
 	"" Manually trigger autocompletion
 	imap <silent> <c-p> <Plug>(completion_trigger)
-	let g:completion_enable_snippet = 'UltiSnips'
+	let g:completion_enable_snippet = 'vim-vsnip'
 endif
  "}}}
+"{{{ vim-vsnip
+let g:vsnip_snippet_dir = expand('~/.config/vsnip/')
+imap <expr> <C-j> vsnip#available(1) ? "<Plug>(vsnip-expand-or-jump)" : "<C-j>"
+imap <expr> <C-k> vsnip#jumpable(-1) ? "<Plug>(vsnip-jump-prev)"      : "<C-k>"
+smap <expr> <C-j> vsnip#available(1) ? "<Plug>(vsnip-expand-or-jump)" : "<C-j>"
+smap <expr> <C-k> vsnip#jumpable(-1) ? "<Plug>(vsnip-jump-prev)"      : "<C-k>"
+"}}}
