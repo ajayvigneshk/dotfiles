@@ -1,11 +1,6 @@
-packadd nvim-lspconfig
-packadd nvim-treesitter
-packadd completion-nvim
-setlocal hidden
-setlocal number
-" Always draw sign column. Prevent buffer moving when adding/deleting sign.
-setlocal signcolumn=yes
-lua << EOF
+vim.api.nvim_command("setlocal hidden")
+vim.api.nvim_command("setlocal number")
+vim.api.nvim_command("setlocal signcolumn=yes")
 local lspconfig = require'lspconfig'
 lspconfig.gopls.setup{
 	autostart=false;
@@ -29,4 +24,3 @@ require'nvim-treesitter.configs'.setup {
     enable = true
   }
 }
-EOF
