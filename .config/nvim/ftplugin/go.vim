@@ -1,9 +1,6 @@
-if exists('g:loaded_gopls_lsp')
-  finish
-endif
-if has('nvim-0.5')
-	luafile ~/.config/nvim/ftplugin/go-0.5.lua
-elseif has('nvim-0.4')
+setlocal hidden
+setlocal number
+setlocal signcolumn=yes
+if !has('nvim-0.5')
 	source ~/.config/nvim/ftplugin/go-0.4.vim
 endif
-let g:loaded_gopls_lsp = 1

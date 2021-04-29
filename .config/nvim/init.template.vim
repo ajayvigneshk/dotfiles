@@ -48,7 +48,7 @@ highlight HighlightedyankRegion guifg=#eee8d5 guibg=#d33682
  "}}}
   "{{{ Source , custom files.
 if has('nvim-0.5')
-	source ~/.config/nvim/rcplugins/lspshortcuts-0.5.func
+	luafile ~/.config/nvim/rcplugins/lspshortcuts-0.5.lua
 elseif has('nvim-0.4')
 	source ~/.config/nvim/rcplugins/lspshortcuts.func
 endif
@@ -95,4 +95,8 @@ imap <expr> <C-j> vsnip#available(1) ? "<Plug>(vsnip-expand-or-jump)" : "<C-j>"
 imap <expr> <C-k> vsnip#jumpable(-1) ? "<Plug>(vsnip-jump-prev)"      : "<C-k>"
 smap <expr> <C-j> vsnip#available(1) ? "<Plug>(vsnip-expand-or-jump)" : "<C-j>"
 smap <expr> <C-k> vsnip#jumpable(-1) ? "<Plug>(vsnip-jump-prev)"      : "<C-k>"
+"}}}
+"{{{ language configs
+luafile ~/.config/nvim/ftplugin/go-0.5.lua
+luafile ~/.config/nvim/lang/tex.lua
 "}}}
