@@ -13,6 +13,7 @@ import:
   - ~/.config/alacritty/custom/alacritty.custom.yml
   - ~/.config/alacritty/custom/alacritty.window.yml
   - ~/.config/alacritty/custom/keybindings.emacs.yml
+  - ~/.config/alacritty/mac/alacritty.mac.yml
 
 # Any items in the `env` entry below will be added as
 # environment variables. Some entries may override variables
