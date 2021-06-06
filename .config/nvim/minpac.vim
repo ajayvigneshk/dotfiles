@@ -22,6 +22,7 @@ function! PackInit() abort
 		call minpac#add('neovim/nvim-lspconfig')
 		call minpac#add('nvim-lua/completion-nvim')
 		call minpac#add('nvim-treesitter/nvim-treesitter', {'do': 'TSUpdate'}) " We recommend updating the parsers on update
+		call minpac#add('nvim-treesitter/nvim-treesitter-textobjects')
 	else
 		call minpac#add('autozimu/LanguageClient-neovim', {'type': 'opt','branch': 'next', 'do': '!./install.sh' })
 		call minpac#add('Shougo/deoplete.nvim', {'type': 'opt', 'do': 'UpdateRemotePlugins'})

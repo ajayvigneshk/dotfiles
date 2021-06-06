@@ -100,3 +100,6 @@ smap <expr> <C-k> vsnip#jumpable(-1) ? "<Plug>(vsnip-jump-prev)"      : "<C-k>"
 luafile ~/.config/nvim/ftplugin/go-0.5.lua
 luafile ~/.config/nvim/lang/tex.lua
 "}}}
+"{{{ Tree sitter
+luafile ~/.config/nvim/lua/treesitter-textobjects.lua
+"}}}
