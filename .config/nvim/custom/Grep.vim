@@ -13,12 +13,12 @@ cnoremap <C-s><C-g> <C-\>eRemoveOpts('g')<CR>
 cnoremap <C-s><C-f> <C-\>eRemoveOpts('F')<CR>
 function PadQuotes()
 	let cmdline = getcmdline()
-	if strridx(cmdline,"\"")+1!=strlen(cmdline)
-		let cmdline = cmdline . " \"\""
+	if strridx(cmdline,"/")+1!=strlen(cmdline)
+		let cmdline = cmdline . " \"\" ./"
 	else
 		let cmdline = cmdline
 	endif
-	call setcmdpos(strlen(cmdline))
+	call setcmdpos(strlen(cmdline)-3)
 	return cmdline
 endfunction
 function AddOpts(parameter)
@@ -49,7 +49,7 @@ function AddOpts(parameter)
 		echom paramtext
 	endif
 	let updatedcmdline=strpart(updatedcmdline,0,4) . paramtext . strpart(updatedcmdline,4)
-	call setcmdpos(strlen(updatedcmdline))
+	call setcmdpos(strlen(updatedcmdline)-3)
 	return updatedcmdline
 endfunction
 function RemoveOpts(parameter)
@@ -62,6 +62,6 @@ function RemoveOpts(parameter)
 	else
 		let updatedcmdline = substitute(cmdline, " -" . a:parameter, "","")
 	endif
-	call setcmdpos(strlen(updatedcmdline))
+	call setcmdpos(strlen(updatedcmdline)-3)
 	return updatedcmdline
 endfunction
