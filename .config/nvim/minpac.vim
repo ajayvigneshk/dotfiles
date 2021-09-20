@@ -18,6 +18,8 @@ function! PackInit() abort
 	call minpac#add('hrsh7th/vim-vsnip-integ')
 	call minpac#add('fatih/vim-go')
 	call minpac#add('tpope/vim-rsi')
+	call minpac#add('tpope/vim-abolish')
+	call minpac#add('tpope/vim-commentary')
 	if has('nvim-0.5')
 		call minpac#add('neovim/nvim-lspconfig')
 		call minpac#add('nvim-lua/completion-nvim')
