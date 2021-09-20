@@ -87,6 +87,7 @@ if has('nvim-0.5')
 	"" Manually trigger autocompletion
 	imap <silent> <c-p> <Plug>(completion_trigger)
 	let g:completion_enable_snippet = 'vim-vsnip'
+	let g:completion_confirm_key = "\<C-y>"
 endif
  "}}}
 "{{{ vim-vsnip
@@ -99,6 +100,7 @@ smap <expr> <C-k> vsnip#jumpable(-1) ? "<Plug>(vsnip-jump-prev)"      : "<C-k>"
 "{{{ language configs
 luafile ~/.config/nvim/ftplugin/go-0.5.lua
 luafile ~/.config/nvim/lang/tex.lua
+luafile ~/.config/nvim/lang/elixir.lua
 "}}}
 "{{{ Tree sitter
 luafile ~/.config/nvim/lua/treesitter-textobjects.lua
