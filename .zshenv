@@ -25,3 +25,4 @@ export CONFIG_DIR="$HOME/.config"
 export ZSH_PLUGINS_DIR="$HOME/.local/share/zsh/plugins"
 export TMUX_PLUGINS_DIR="$HOME/.local/share/tmux/plugins"
 export GPG_TTY=`tty`
+source ~/.zshenv_others 2> /dev/null || true
