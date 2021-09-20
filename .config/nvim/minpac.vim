@@ -25,6 +25,9 @@ function! PackInit() abort
 		call minpac#add('nvim-lua/completion-nvim')
 		call minpac#add('nvim-treesitter/nvim-treesitter', {'do': 'TSUpdate'}) " We recommend updating the parsers on update
 		call minpac#add('nvim-treesitter/nvim-treesitter-textobjects')
+		call minpac#add('Olical/conjure', {'rev': 'v4.22.1' })
+		call minpac#add('rktjmp/hotpot.nvim')
+		"call minpac#add('Olical/aniseed', {'rev': 'v3.20.0' })
 	else
 		call minpac#add('autozimu/LanguageClient-neovim', {'type': 'opt','branch': 'next', 'do': '!./install.sh' })
 		call minpac#add('Shougo/deoplete.nvim', {'type': 'opt', 'do': 'UpdateRemotePlugins'})
