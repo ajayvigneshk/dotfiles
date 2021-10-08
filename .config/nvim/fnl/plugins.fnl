@@ -1,0 +1,35 @@
+((. (require :packer) :startup)
+  (fn [use]
+    (do
+      (use :wbthomason/packer.nvim)
+      (use :rktjmp/hotpot.nvim)
+      (use :junegunn/fzf.vim)
+      (use :mcchrish/nnn.vim)
+      (use :lifepillar/vim-solarized8)
+      (use :itchyny/lightline.vim)
+      (use :machakann/vim-sandwich)
+      (use :tpope/vim-unimpaired)
+      (use :tpope/vim-repeat)
+      (use :tpope/vim-sensible)
+      (use :skywind3000/asyncrun.vim)
+      (use :jamessan/vim-gnupg)
+      (use :vimwiki/vimwiki)
+      (use :machakann/vim-highlightedyank)
+      (use :hrsh7th/vim-vsnip)
+      (use :hrsh7th/vim-vsnip-integ)
+      (use :fatih/vim-go)
+      (use :tpope/vim-rsi)
+      (use :tpope/vim-abolish)
+      (use :tpope/vim-commentary)
+      (use :tpope/vim-fugitive)
+      (use :bakpakin/fennel.vim)
+      ; todo
+      ; lazy load
+      (use :neovim/nvim-lspconfig)
+      (use :nvim-lua/completion-nvim)
+      (use :nvim-treesitter/nvim-treesitter-textobjects)
+      (use {1 :nvim-treesitter/nvim-treesitter
+            :do :TSUpdate})
+      (use {1 :Olical/conjure
+            :rev :v4.22.1 })
+      )))

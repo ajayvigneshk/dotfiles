@@ -1,12 +1,9 @@
 let mapleader = " "
-"{{{ minpac / plugins
-source ~/.config/nvim/minpac.vim
-" Define user commands for updating/cleaning the plugins.
-" Each of them calls PackInit() to load minpac and register
-" the information of plugins, then performs the task.
-command! PackUpdate call PackInit() | call minpac#update('', {'do': 'call minpac#status()'})
-command! PackClean  call PackInit() | call minpac#clean()
-command! PackStatus call PackInit() | call minpac#status()
+"{{{ plugins
+lua require("install_packer")
+lua require("install_hotpot")
+lua require("hotpot")
+lua require("plugins")
 "}}}
 "{{{ Vim essentials / basic / misc  config
 if version >= 600
@@ -56,7 +53,7 @@ source $CONFIG_DIR/nvim/custom/Grep.vim
 "source ~/.config/nvim/custom/tabsandpanes.vim
 "source ~/.config/nvim/custom/terminal.vim
 " Disable default mappings
-source $CONFIG_DIR/nvim/pack/minpac/start/vim-sandwich/macros/sandwich/keymap/surround.vim
+source ~/.local/share/nvim/site/pack/packer/start/vim-sandwich/macros/sandwich/keymap/surround.vim
 source $CONFIG_DIR/nvim/vimwiki.vim
  "}}}
  "{{{ Nnn
