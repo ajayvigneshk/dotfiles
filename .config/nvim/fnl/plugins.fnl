@@ -26,7 +26,10 @@
       ; todo
       ; lazy load
       (use :neovim/nvim-lspconfig)
-      (use :nvim-lua/completion-nvim)
+      (use :hrsh7th/nvim-cmp)
+      (use :hrsh7th/cmp-nvim-lsp)
+      (use :hrsh7th/cmp-buffer)
+      (use :hrsh7th/cmp-vsnip)
       (use :nvim-treesitter/nvim-treesitter-textobjects)
       (use {1 :nvim-treesitter/nvim-treesitter
             :do :TSUpdate})
