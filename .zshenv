@@ -20,6 +20,7 @@ export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/tools/bin
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 export PATH=/usr/local/smlnj/bin:"$PATH"
+export PATH="$HOMEBREW_PREFIX/opt/luajit-openresty/bin:$PATH"
 export NVM_DIR="$HOME/.nvm"
 export CONFIG_DIR="$HOME/.config"
 export ZSH_PLUGINS_DIR="$HOME/.local/share/zsh/plugins"

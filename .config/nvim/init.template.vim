@@ -23,7 +23,6 @@ set cursorline cursorcolumn
 let g:highlightedyank_highlight_duration = 500
 "}}}
 "{{{ FZF
-set rtp+=/usr/local/opt/fzf
 source ~/.config/nvim/fzf.vim
 "}}}
  "{{{ colors / themes
@@ -72,11 +71,15 @@ lua require('nvim-cmp-setup')
 lua require('lsp')
  "}}}
 "{{{ vim-vsnip
-let g:vsnip_snippet_dir = expand('~/.config/vsnip/')
-imap <expr> <C-j> vsnip#available(1) ? "<Plug>(vsnip-expand-or-jump)" : "<C-j>"
-imap <expr> <C-k> vsnip#jumpable(-1) ? "<Plug>(vsnip-jump-prev)"      : "<C-k>"
-smap <expr> <C-j> vsnip#available(1) ? "<Plug>(vsnip-expand-or-jump)" : "<C-j>"
-smap <expr> <C-k> vsnip#jumpable(-1) ? "<Plug>(vsnip-jump-prev)"      : "<C-k>"
+" let g:vsnip_snippet_dir = expand('~/.config/vsnip/')
+lua require("vim-vsnip")
+" Todo move to fennel
+imap <expr> <C-y>   vsnip#expandable()  ? '<Plug>(vsnip-expand)'         : '<C-y>'
+smap <expr> <C-y>   vsnip#expandable()  ? '<Plug>(vsnip-expand)'         : '<C-y>'
+imap <expr> <Tab> vsnip#jumpable(1) ? "<Plug>(vsnip-jump-next)" : "<Tab>"
+imap <expr> <S-Tab> vsnip#jumpable(-1) ? "<Plug>(vsnip-jump-prev)"      : "<S-Tab>"
+smap <expr> <Tab> vsnip#jumpable(1) ? "<Plug>(vsnip-jump-next)" : "<Tab>"
+smap <expr> <S-Tab> vsnip#jumpable(-1) ? "<Plug>(vsnip-jump-prev)"      : "<S-Tab>"
 "}}}
 "{{{ Tree sitter
 lua require("treesitter")
