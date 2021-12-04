@@ -1,38 +1,64 @@
+(fn lazy_load_plugins [use]
+  ; This (not fzf.vim) is the core plugin, not doing post-hook install here
+  (use {1 :junegunn/fzf
+        :cmd ["FZF"]})
+  (use {1 :mcchrish/nnn.vim
+        :cmd ["NnnPicker"]})
+  (use {1 :vimwiki/vimwiki
+        :keys ["<leader>ww"]})
+  (use {1 :tpope/vim-abolish
+        :cmd ["Abolish" "Subvert"]})
+  (use {1 :tpope/vim-fugitive
+        :cmd ["G"]})
+  ; Used primarily for async grep,
+  ; TODO replace this mainly due to it supporting only one job
+  ; with vim-grepper / Dispatch itself when it supports grep
+  (use {1 :skywind3000/asyncrun.vim
+        :cmd ["AsyncRun"]})
+  (use {1 :tpope/vim-dispatch
+        :config "require('conf-dispatch')"
+        :cmd ["Dispatch" "Make" "Focus" "Start"]})
+  (use {1 :tpope/vim-commentary
+        :keys ["gc" "gcc"]})
+  ; only for ft=lang based stuff, for now only elixir
+  (use {1 :ajayvigneshk/neoterm
+        :ft ["elixir"]
+        :config "require('conf-neoterm')"})
+  (use {1 :vim-test/vim-test
+        :ft ["elixir"]
+        :config "require('conf-vim-test')"})
+  (use {1 :tpope/vim-projectionist
+        :ft ["elixir"]})
+  )
 ((. (require :packer) :startup)
-  (fn [use]
-    (do
-      (use :wbthomason/packer.nvim)
-      (use :rktjmp/hotpot.nvim)
-      (use :junegunn/fzf); This (not fzf.vim) is the core plugin, not doing post-hook install here
-      (use :mcchrish/nnn.vim)
-      (use :lifepillar/vim-solarized8)
-      (use :itchyny/lightline.vim)
-      (use :machakann/vim-sandwich)
-      (use :tpope/vim-unimpaired)
-      (use :tpope/vim-repeat)
-      (use :tpope/vim-sensible)
-      (use :skywind3000/asyncrun.vim)
-      (use :jamessan/vim-gnupg)
-      (use :vimwiki/vimwiki)
-      (use :machakann/vim-highlightedyank)
-      (use :hrsh7th/vim-vsnip)
-      (use :hrsh7th/vim-vsnip-integ)
-      (use :tpope/vim-rsi)
-      (use :tpope/vim-abolish)
-      (use :tpope/vim-commentary)
-      (use :tpope/vim-fugitive)
-      (use :bakpakin/fennel.vim)
-      ; todo
-      ; lazy load
-      ; couldn't do it
-      (use :neovim/nvim-lspconfig)
-      (use :hrsh7th/nvim-cmp)
-      (use :hrsh7th/cmp-nvim-lsp)
-      (use :hrsh7th/cmp-vsnip)
-      (use :nvim-treesitter/nvim-treesitter-textobjects)
-      (use {1 :nvim-treesitter/nvim-treesitter
-            :do :TSUpdate})
-      ; ft specific plugins
-      (use :elixir-editors/vim-elixir)
-      (use :fatih/vim-go)
-      )))
+ (fn [use]
+   (do
+     (use :wbthomason/packer.nvim)
+     (use :rktjmp/hotpot.nvim)
+     (lazy_load_plugins use)
+     (use :lifepillar/vim-solarized8)
+     (use :itchyny/lightline.vim)
+     (use :machakann/vim-sandwich)
+     (use :tpope/vim-unimpaired)
+     (use :tpope/vim-repeat)
+     (use :tpope/vim-sensible)
+     (use :jamessan/vim-gnupg)
+     (use :machakann/vim-highlightedyank)
+     (use :hrsh7th/vim-vsnip)
+     (use :hrsh7th/vim-vsnip-integ)
+     (use :tpope/vim-rsi)
+     ; todo
+     ; lazy load (some day)
+     (use :neovim/nvim-lspconfig)
+     (use :hrsh7th/nvim-cmp)
+     (use :hrsh7th/cmp-nvim-lsp)
+     (use :hrsh7th/cmp-vsnip)
+     ; Plugins that have after/ftplugin themselves
+     ; Might not be able to do opt
+     (use :nvim-treesitter/nvim-treesitter-textobjects)
+     (use {1 :nvim-treesitter/nvim-treesitter
+           :do :TSUpdate})
+     (use :elixir-editors/vim-elixir)
+     (use :fatih/vim-go)
+     (use :bakpakin/fennel.vim)
+     )))
