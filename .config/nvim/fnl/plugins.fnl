@@ -10,6 +10,8 @@
         :cmd ["Abolish" "Subvert"]})
   (use {1 :tpope/vim-fugitive
         :cmd ["G"]})
+  (use {1 :tpope/vim-rsi
+        :event ["InsertEnter *" "CmdlineEnter *"]})
   ; Used primarily for async grep,
   ; TODO replace this mainly due to it supporting only one job
   ; with vim-grepper / Dispatch itself when it supports grep
@@ -44,7 +46,6 @@
      (use :tpope/vim-sensible)
      (use :jamessan/vim-gnupg)
      (use :machakann/vim-highlightedyank)
-     (use :tpope/vim-rsi)
      (use :neovim/nvim-lspconfig) ;cannot be made opt
      (use {1 :hrsh7th/nvim-cmp
            :config "require('conf-nvim-cmp')"
