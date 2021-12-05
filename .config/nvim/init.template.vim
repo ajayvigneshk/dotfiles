@@ -67,20 +67,8 @@ let g:vimwiki_folding='syntax:quick'
 let g:asyncrun_open = 8
  "}}}
 "{{{ autocompletion, lsp
-lua require('nvim-cmp-setup')
 lua require('lsp')
  "}}}
-"{{{ vim-vsnip
-" let g:vsnip_snippet_dir = expand('~/.config/vsnip/')
-lua require("vim-vsnip")
-" Todo move to fennel
-imap <expr> <C-y>   vsnip#expandable()  ? '<Plug>(vsnip-expand)'         : '<C-y>'
-smap <expr> <C-y>   vsnip#expandable()  ? '<Plug>(vsnip-expand)'         : '<C-y>'
-imap <expr> <Tab> vsnip#jumpable(1) ? "<Plug>(vsnip-jump-next)" : "<Tab>"
-imap <expr> <S-Tab> vsnip#jumpable(-1) ? "<Plug>(vsnip-jump-prev)"      : "<S-Tab>"
-smap <expr> <Tab> vsnip#jumpable(1) ? "<Plug>(vsnip-jump-next)" : "<Tab>"
-smap <expr> <S-Tab> vsnip#jumpable(-1) ? "<Plug>(vsnip-jump-prev)"      : "<S-Tab>"
-"}}}
 "{{{ Tree sitter
 lua require("treesitter")
 "}}}

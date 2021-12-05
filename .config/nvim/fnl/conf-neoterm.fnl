@@ -1,5 +1,3 @@
-(fn replace_term_codes [arg]
-  (vim.api.nvim_replace_termcodes arg true true true))
 ; (vim.api.nvim_set_var "neoterm_autojump" 1)
 (vim.api.nvim_set_var "neoterm_term_per_tab" 1)
 (vim.api.nvim_set_var "neoterm_autoscroll" 1)

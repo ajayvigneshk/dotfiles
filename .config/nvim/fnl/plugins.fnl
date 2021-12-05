@@ -44,15 +44,19 @@
      (use :tpope/vim-sensible)
      (use :jamessan/vim-gnupg)
      (use :machakann/vim-highlightedyank)
-     (use :hrsh7th/vim-vsnip)
-     (use :hrsh7th/vim-vsnip-integ)
      (use :tpope/vim-rsi)
-     ; todo
-     ; lazy load (some day)
-     (use :neovim/nvim-lspconfig)
-     (use :hrsh7th/nvim-cmp)
-     (use :hrsh7th/cmp-nvim-lsp)
-     (use :hrsh7th/cmp-vsnip)
+     (use :neovim/nvim-lspconfig) ;cannot be made opt
+     (use {1 :hrsh7th/nvim-cmp
+           :config "require('conf-nvim-cmp')"
+           :event "InsertEnter *"
+           :requires [
+                      :hrsh7th/cmp-nvim-lsp ; cannot be made opt
+                      {1 :L3MON4D3/LuaSnip ; TODO figure out friendly syntax snippets support
+                       :after :nvim-cmp
+                       :config "require('conf-luasnip')"}
+                      {1 :saadparwaiz1/cmp_luasnip
+                       :after  :nvim-cmp}
+                      ]})
      ; Plugins that have after/ftplugin themselves
      ; Might not be able to do opt
      (use :nvim-treesitter/nvim-treesitter-textobjects)

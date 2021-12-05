@@ -6,7 +6,7 @@
                              :node_incremental :grn
                              :scope_incremental :grc
                              :node_decremental :grm}}
-                  :indent {:enable true}})
+                  :indent {:enable false}})
 (ts-config-setup {:textobjects 
                   {:select 
                    {:enable true
