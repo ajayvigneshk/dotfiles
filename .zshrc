@@ -152,6 +152,11 @@ SAVEHIST=10000
 HISTORY_IGNORE='(docker ps *|(git|config) (restore --staged *|tag *|(checkout|co) *|tag *|show *|clone *|stash*|diff*|(status|st)|commit -m *|add *|log|log [^-]*)|nvim *|man *|mkdir *|mv *|rm *|ls*|f[g,c]|ssh [^-]*|echo *)'
 setopt appendhistory hist_ignore_space hist_ignore_all_dups histsavenodups
 setopt histsavenodups histignorespace
+# asdf
+if [[ -f $HOME/.asdf/asdf.sh ]]; then
+  . $HOME/.asdf/asdf.sh
+  fpath=(${ASDF_DIR}/completions $fpath)
+fi
 fpath=( ~/.config/zsh/functions "${fpath[@]}" )
 autoload -Uz fzfdefaultopts
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
@@ -180,3 +185,6 @@ promptinit
 if [[ ! -d $ZSH_PLUGINS_DIR/zsh-syntax-highlighting ]]; then
   git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_PLUGINS_DIR/zsh-syntax-highlighting
 fi
+## AWS CLI suggestions
+autoload bashcompinit && bashcompinit
+complete -C '/usr/local/bin/aws_completer' aws
