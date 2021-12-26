@@ -1,0 +1,7 @@
+(vim.api.nvim_set_var :db (os.getenv "LOCAL_DB"))
+(vim.api.nvim_set_keymap :n :<Plug>DBExe "db#op_exec()" {:noremap true :expr true})
+(vim.api.nvim_set_keymap :n :dx :<Plug>DBExe {:noremap false})
+(vim.api.nvim_set_keymap :n :<Plug>DBExeLine "db#op_exec() . '_'" {:noremap true :expr true})
+(vim.api.nvim_set_keymap :n :dxx :<Plug>DBExeLine {:noremap false})
+(vim.api.nvim_set_keymap :x :<Plug>DBExe "db#op_exec()" {:noremap true :expr true})
+(vim.api.nvim_set_keymap :x :dx :<Plug>DBExe {:noremap false})

@@ -4,12 +4,19 @@
         :cmd ["FZF"]})
   (use {1 :mcchrish/nnn.vim
         :cmd ["NnnPicker"]})
+  ; TODO consider alternates like zk
   (use {1 :vimwiki/vimwiki
         :keys ["<leader>ww"]})
   (use {1 :tpope/vim-abolish
         :cmd ["Abolish" "Subvert"]})
   (use {1 :tpope/vim-fugitive
         :cmd ["G"]})
+  (use {1 "kristijanhusak/vim-dadbod-completion"
+        :after [:nvim-cmp :vim-dadbod]
+        :requires [ {1 "tpope/vim-dadbod"
+                     :ft ["sql"]
+                     :config "require('conf-vim-dadbod')"} ]
+        })
   (use {1 :tpope/vim-rsi
         :event ["InsertEnter *" "CmdlineEnter *"]})
   ; Used primarily for async grep,
@@ -45,15 +52,17 @@
      (use :tpope/vim-repeat)
      (use :tpope/vim-sensible)
      (use :jamessan/vim-gnupg)
-     (use :machakann/vim-highlightedyank)
      (use :neovim/nvim-lspconfig) ;cannot be made opt
      (use {1 :hrsh7th/nvim-cmp
            :config "require('conf-nvim-cmp')"
            :event "InsertEnter *"
            :requires [
                       :hrsh7th/cmp-nvim-lsp ; cannot be made opt
-                      {1 :L3MON4D3/LuaSnip ; TODO figure out friendly syntax snippets support
+                      {1 :L3MON4D3/LuaSnip
                        :after :nvim-cmp
+                       :requires [ {1 :rafamadriz/friendly-snippets
+                                    :after :LuaSnip
+                                    :config "require('luasnip.loaders.from_vscode').load()"} ]
                        :config "require('conf-luasnip')"}
                       {1 :saadparwaiz1/cmp_luasnip
                        :after  :nvim-cmp}

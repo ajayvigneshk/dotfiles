@@ -19,8 +19,6 @@ set undofile
 "Enable switching buffers without saving
 set hidden
 set cursorline cursorcolumn
-" Set yank highlight duration
-let g:highlightedyank_highlight_duration = 500
 "}}}
 "{{{ FZF
 source ~/.config/nvim/fzf.vim
@@ -71,4 +69,13 @@ lua require('lsp')
  "}}}
 "{{{ Tree sitter
 lua require("treesitter")
+"}}}
+"{{{ highlighted yank
+augroup highlight_yank
+    autocmd!
+    au TextYankPost * silent! lua vim.highlight.on_yank{higroup="IncSearch", timeout=500}
+augroup END
+"}}}
+"{{{ general
+lua require("conf-general")
 "}}}
