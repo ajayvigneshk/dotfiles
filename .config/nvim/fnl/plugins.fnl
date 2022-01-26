@@ -38,6 +38,10 @@
         :config "require('conf-vim-test')"})
   (use {1 :tpope/vim-projectionist
         :ft ["elixir"]})
+  (use {1 :AndrewRadev/splitjoin.vim
+        :ft ["elixir"]})
+  (use {1 :gpanders/fennel-repl.nvim
+        :cmd ["FennelRepl"]})
   )
 ((. (require :packer) :startup)
  (fn [use]
@@ -69,10 +73,11 @@
                       ]})
      ; Plugins that have after/ftplugin themselves
      ; Might not be able to do opt
-     (use :nvim-treesitter/nvim-treesitter-textobjects)
-     (use {1 :nvim-treesitter/nvim-treesitter
-           :do :TSUpdate})
+     ; (use :nvim-treesitter/nvim-treesitter-textobjects)
+     ; (use {1 :nvim-treesitter/nvim-treesitter
+     ;       :do :TSUpdate})
      (use :elixir-editors/vim-elixir)
-     (use :fatih/vim-go)
-     (use :bakpakin/fennel.vim)
+     ; (use :fatih/vim-go)
+     (use {1 :bakpakin/fennel.vim
+           :ft ["fennel"]})
      )))

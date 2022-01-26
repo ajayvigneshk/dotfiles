@@ -50,10 +50,10 @@
               :on_attach on-attach
               :settings {:elixirLS {:dialyzerEnabled false }}
               }
-  :gopls {:on_attach on-attach}
-  :texlab {:cmd [:texlab]
-           :on_attach on-attach}
-  })
+   :gopls {:on_attach on-attach}
+   :texlab {:cmd [:texlab]
+            :on_attach on-attach}
+   })
 
 (local autocomplete-cmp (require :autocomplete-cmp))
 (each [server-name server-config (pairs lsp-config-setup)]
