@@ -50,9 +50,10 @@ source $CONFIG_DIR/nvim/vimwiki.vim
  "{{{ Nnn
 let g:nnn#set_default_mappings = 0
 let g:nnn#replace_netrw = 1
-" Start nnn in the current file's directory
-nnoremap <leader>n :NnnPicker %:p:h<CR>
- "}}}
+" Start nnn in the current file's directory (this is easier to do in vimscript
+" than lua / fnl)
+nnoremap <expr> <leader>n filereadable(expand('%'))==1 ? '<CMD>NnnPicker %:p<CR>' : '<CMD>NnnPicker %:p:h<CR>'
+"}}}
 "{{{ vimwiki 
 " Do not set filetype outside vimwiki directory
 let g:vimwiki_global_ext = 0
