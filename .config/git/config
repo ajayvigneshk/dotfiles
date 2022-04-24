@@ -1,5 +1,7 @@
 [merge]
 	tool = nvimdiff
+[push]
+	default = current
 [mergetool]
 	prompt = true
 [alias]

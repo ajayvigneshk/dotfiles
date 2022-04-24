@@ -11,6 +11,7 @@
 import:
   - ~/.config/alacritty/custom/colorschemes.yml
   - ~/.config/alacritty/custom/alacritty.custom.yml
+  - ~/.config/alacritty/custom/alacritty.window.yml
   - ~/.config/alacritty/custom/keybindings.emacs.yml
 
 # Any items in the `env` entry below will be added as

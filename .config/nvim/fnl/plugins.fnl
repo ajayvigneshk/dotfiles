@@ -1,21 +1,30 @@
 (fn lazy_load_plugins [use]
-  ; This (not fzf.vim) is the core plugin, not doing post-hook install here
   (use {1 :junegunn/fzf
-        :cmd ["FZF"]})
+        :fn ["fzf#vim#complete"]
+        :cmd [:FZF]
+        })
+  ; hopefully for temporary reasons
+  (use {1 :junegunn/fzf.vim
+        :fn ["fzf#vim#complete"]
+        ; [tip][packer] syntax: it's NOT :junnegunn/fzf but :fzf in after 
+        :after [:fzf]
+        :requires [:junegunn/fzf]
+        })
   (use {1 :mcchrish/nnn.vim
         :cmd ["NnnPicker"]})
   ; TODO consider alternates like zk
   (use {1 :vimwiki/vimwiki
         :keys ["<leader>ww"]})
   (use {1 :tpope/vim-abolish
-        :cmd ["Abolish" "Subvert"]})
+        :cmd ["Abolish" "Subvert"]
+        :keys ["cr"]})
   (use {1 :tpope/vim-fugitive
-        :cmd ["G"]})
+        :cmd ["G" "Gedit" "Gtabedit" "Gvdiffsplit"]})
   (use {1 "kristijanhusak/vim-dadbod-completion"
         :after [:nvim-cmp :vim-dadbod]
-        :requires [ {1 "tpope/vim-dadbod"
-                     :ft ["sql"]
-                     :config "require('conf-vim-dadbod')"} ]
+        :requires [{1 "tpope/vim-dadbod"
+                    :ft ["sql"]
+                    :config "require('conf-vim-dadbod')"}]
         })
   (use {1 :tpope/vim-rsi
         :event ["InsertEnter *" "CmdlineEnter *"]})
@@ -40,6 +49,9 @@
         :ft ["elixir"]})
   (use {1 :AndrewRadev/splitjoin.vim
         :ft ["elixir"]})
+  (use {1 "tpope/vim-obsession"
+        :cmd ["Obsession"]
+        })
   (use {1 :gpanders/fennel-repl.nvim
         :cmd ["FennelRepl"]})
   )
@@ -73,9 +85,9 @@
                       ]})
      ; Plugins that have after/ftplugin themselves
      ; Might not be able to do opt
-     ; (use :nvim-treesitter/nvim-treesitter-textobjects)
-     ; (use {1 :nvim-treesitter/nvim-treesitter
-     ;       :do :TSUpdate})
+     (use :nvim-treesitter/nvim-treesitter-textobjects)
+     (use {1 :nvim-treesitter/nvim-treesitter
+           :do :TSUpdate})
      (use :elixir-editors/vim-elixir)
      ; (use :fatih/vim-go)
      (use {1 :bakpakin/fennel.vim

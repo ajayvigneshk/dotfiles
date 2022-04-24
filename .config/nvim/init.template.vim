@@ -68,7 +68,7 @@ let g:asyncrun_open = 8
 lua require('lsp')
  "}}}
 "{{{ Tree sitter
-" lua require("treesitter")
+lua require("treesitter")
 "}}}
 "{{{ highlighted yank
 augroup highlight_yank

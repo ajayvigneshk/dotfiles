@@ -1,7 +1,8 @@
 (local ts-config-setup (. (require :nvim-treesitter.configs) :setup))
-(ts-config-setup {:highlight {:enable false}
+(ts-config-setup {:highlight {:enable true}
                   :incremental_selection 
                   {:enable true
+                   :additional_vim_regex_highlighting false
                    :keymaps {:init_selection :gnn
                              :node_incremental :grn
                              :scope_incremental :grc
@@ -13,11 +14,7 @@
                     :keymaps {:af "@function.outer"
                               :if "@function.inner"
                               :ac "@class.outer"
-                              :ic "@class.inner"
-                              :iF {:python "(function_definition) @function"
-                                   :cpp "(function_definition) @function"
-                                   :c "(function_definition) @function"
-                                   :java "(method_declaration) @function"}}}}})
+                              :ic "@class.inner"}}}})
 (ts-config-setup {:textobjects 
                   {:swap 
                    {:enable true
