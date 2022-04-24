@@ -54,6 +54,10 @@
         })
   (use {1 :gpanders/fennel-repl.nvim
         :cmd ["FennelRepl"]})
+  (use {1 :mbbill/undotree
+        :cmd ["UndotreeToggle"]})
+  (use {1 :tpope/vim-eunuch
+        :cmd ["Delete" "Unlink" "Move" "Rename" "Chmod" "Mkdir" "Cfind" "Clocate" "Lfind" "Wall" "SudoWrite" "SudoEdit"]})
   )
 ((. (require :packer) :startup)
  (fn [use]
