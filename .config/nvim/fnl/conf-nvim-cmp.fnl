@@ -11,5 +11,7 @@
                                         :<C-Space> (cmp.mapping.complete)
                                         :<C-e> (cmp.mapping.abort)
                                         :<C-y> (cmp.mapping.confirm {:select true})})
-   :sources [{:name :nvim_lsp} {:name :luasnip} {:name :vim-dadbod-completion}]
+   ; not sure if keyword_length works
+   :sources [{:name :nvim_lsp} {:name :luasnip} {:name :buffer
+                                                 :option {:keyword_length 5}} {:name :vim-dadbod-completion}]
    })

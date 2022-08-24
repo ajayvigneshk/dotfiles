@@ -188,3 +188,5 @@ fi
 ## AWS CLI suggestions
 autoload bashcompinit && bashcompinit
 complete -C '/usr/local/bin/aws_completer' aws
+
+source ~/.zshrc_others 2> /dev/null || true

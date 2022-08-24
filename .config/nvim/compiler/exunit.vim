@@ -21,7 +21,7 @@ CompilerSet errorformat=
   \%C\ \ \ \ \ code:%m,
   \%+C\ \ \ \ \ %.%#failed,
 augroup exunit
-  autocmd BufReadPost quickfix setlocal nofoldenable
+  " autocmd BufReadPost quickfix setlocal nofoldenable
   autocmd BufReadPost quickfix setlocal foldmethod=expr
   autocmd BufReadPost quickfix setlocal foldexpr=getline(v:lnum)[0]==\"\|\"
 augroup END

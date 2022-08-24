@@ -19,7 +19,13 @@
         :cmd ["Abolish" "Subvert"]
         :keys ["cr"]})
   (use {1 :tpope/vim-fugitive
-        :cmd ["G" "Gedit" "Gtabedit" "Gvdiffsplit"]})
+        :event ["VimEnter" "DirChanged"]
+        ; syntax equivalent of vim.fn["git#WithinGitDir"]() = 1 hence the double ()
+        ; this calls vim function within lua
+        :cond (fn [] (= ((. vim.fn "git#WithinGitDir")) 1))
+        })
+  (use {1 :shumphrey/fugitive-gitlab.vim
+        :after [:vim-fugitive]})
   (use {1 "kristijanhusak/vim-dadbod-completion"
         :after [:nvim-cmp :vim-dadbod]
         :requires [{1 "tpope/vim-dadbod"
@@ -85,6 +91,8 @@
                                     :config "require('luasnip.loaders.from_vscode').load()"} ]
                        :config "require('conf-luasnip')"}
                       {1 :saadparwaiz1/cmp_luasnip
+                       :after  :nvim-cmp}
+                      {1 :hrsh7th/cmp-buffer
                        :after  :nvim-cmp}
                       ]})
      ; Plugins that have after/ftplugin themselves
