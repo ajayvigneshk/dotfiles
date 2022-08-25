@@ -15,9 +15,44 @@ matches:
     replace: |
       /label ~"flow::in dev" ~"backend::doing" 
       /assign @ajay91
+  - trigger: ":close"
+    replace: |
+      /label ~"flow::done" ~"backend::done"
+      /close
   - trigger: ":done"
     replace: |
       /label ~"flow::done" ~"backend::done" 
-  - trigger: ":done_be"
+  - trigger: ":be_done"
     replace: |
       /label ~"backend::done" 
+  - trigger: ":now"
+    replace: "{{mytime}}"
+    vars:
+      - name: mytime
+        type: date
+        params:
+          format: "%H:%M"
+  - trigger: ":utc_now"
+    replace: "{{utctime}}"
+    vars:
+      - name: utctime
+        type: shell
+        params:
+          cmd: "date -u '+%H:%M'"
+  - trigger: ":docs"
+    replace: "{{form1.file}}"
+    vars:
+      - name: files
+        type: shell
+        params:
+          cmd: "find ~/Documents -maxdepth 1"
+      - name: form1
+        type: form
+        params:
+          layout: |
+            Select file:
+            [[file]]
+          fields:
+            file:
+              type: list
+              values: "{{files}}"
