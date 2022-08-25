@@ -26,6 +26,11 @@
         })
   (use {1 :shumphrey/fugitive-gitlab.vim
         :after [:vim-fugitive]})
+  (use {1 :junegunn/gv.vim
+        :after [:vim-fugitive]})
+  ; This is very buggy especially opening it (refer github issues)
+  (use {1 :sodapopcan/vim-twiggy
+        :after [:vim-fugitive]})
   (use {1 "kristijanhusak/vim-dadbod-completion"
         :after [:nvim-cmp :vim-dadbod]
         :requires [{1 "tpope/vim-dadbod"

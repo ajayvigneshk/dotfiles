@@ -36,6 +36,13 @@ colorscheme solarized8_flat
 set noshowmode
 let g:lightline = {
       \ 'colorscheme': 'material',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+      \ },
+      \ 'component_function': {
+      \   'gitbranch': 'FugitiveHead'
+      \ },
       \ }
 " highlight color to magenta
 highlight HighlightedyankRegion guifg=#eee8d5 guibg=#d33682
