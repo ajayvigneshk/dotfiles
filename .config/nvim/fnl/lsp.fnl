@@ -32,14 +32,12 @@
   ; Set some keybinds conditional on server capabilities
   (if client.server_capabilities.documentFormattingProvider
     (do
-      (buf-set-keymap :n :<leader>f "<cmd>lua vim.lsp.buf.formatting_sync()<CR>" opts)
       (vim.api.nvim_exec 
         "augroup lsp_buf_autoformat
         autocmd! * <buffer>
         autocmd BufWritePre <buffer> silent! lua vim.lsp.buf.formatting_sync()
         augroup END" false))
-    client.server_capabilities.documentRangeFormattingProvider
-    (buf-set-keymap :n :<leader>f "<cmd>lua vim.lsp.buf.range_formatting()<CR>" opts))
+    )
 
   ; Set autocommands conditional on server_capabilities
   (when client.server_capabilities.documentHighlightProvider
