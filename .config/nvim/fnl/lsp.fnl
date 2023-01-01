@@ -54,7 +54,9 @@
 ; setup different lsp configs
 (local lspconfig (require :lspconfig))
 (local lsp-config-setup 
-  {:elixirls {:cmd [(.. (vim.fn.stdpath "data") :/lsp/elixir-ls/language_server.sh)]
+  {:elixirls {
+              ; :cmd  [(.. (vim.fn.expand "$HOME") :/personal/projects/elixir-ls/release/language_server.sh)]
+              :cmd  [(.. (vim.fn.stdpath "data") :/lsp/elixir-ls/language_server.sh)]
               :on_attach on-attach
               :settings {:elixirLS 
                          {:dialyzerEnabled false
