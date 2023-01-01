@@ -9,37 +9,46 @@
 # it gets replaced by the "replace" string.
 matches:
   # Simple text replacement
-  - trigger: ":hey"
-    replace: "Hey 👋🏼!"
-  - trigger: ":in_dev"
+  - trigger: ";hey"
+    replace: "Hey $|$👋🏼!"
+  - trigger: ";hi"
+    replace: "Hi $|$👋🏼!"
+  - trigger: ";hello"
+    replace: "Hello $|$👋🏼!"
+  - trigger: ";WDYT"
+    replace: "What do you think"
+  - trigger: ";in_dev"
     replace: |
       /label ~"flow::in dev" ~"backend::doing" 
       /assign @ajay91
-  - trigger: ":close"
+  - trigger: ";in_review"
+    replace: |
+      /label ~"backend::in-review"
+  - trigger: ";close"
     replace: |
       /label ~"flow::done" ~"backend::done"
       /close
-  - trigger: ":done"
+  - trigger: ";done"
     replace: |
       /label ~"flow::done" ~"backend::done" 
-  - trigger: ":be_done"
+  - trigger: ";be_done"
     replace: |
       /label ~"backend::done" 
-  - trigger: ":now"
+  - trigger: ";now"
     replace: "{{mytime}}"
     vars:
       - name: mytime
         type: date
         params:
           format: "%H:%M"
-  - trigger: ":utc_now"
+  - trigger: ";utc_now"
     replace: "{{utctime}}"
     vars:
       - name: utctime
         type: shell
         params:
           cmd: "date -u '+%H:%M'"
-  - trigger: ":docs"
+  - trigger: ";docs"
     replace: "{{form1.file}}"
     vars:
       - name: files
