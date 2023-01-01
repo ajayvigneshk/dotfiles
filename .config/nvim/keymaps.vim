@@ -18,7 +18,9 @@ nnoremap <leader>f :find *
 " mapping to ease find files from current dir
 cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
 " for tabs
-nnoremap <leader>tn :tabnew<CR>
-nnoremap <leader>te :tabedit **/*
-nnoremap <leader>tf :tabfind *
+" This apparently shadows some mapping about tags (don't care for now)
+nnoremap <C-t> :tabnew<CR>
+inoremap <C-t> <ESC>:tabnew<CR>
+" nnoremap <leader>te :tabedit **/*
+" nnoremap <leader>tf :tabfind *
 "}}}
