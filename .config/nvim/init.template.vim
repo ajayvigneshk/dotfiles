@@ -85,5 +85,5 @@ augroup highlight_yank
 augroup END
 "}}}
 "{{{ general
-lua require("conf-general")
+runtime keymaps.vim
 "}}}
