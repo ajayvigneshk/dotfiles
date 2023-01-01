@@ -33,3 +33,9 @@
 (vim.api.nvim_set_keymap :s :<Tab> "v:lua.snip_jump_next()" {:expr true})
 (vim.api.nvim_set_keymap :i :<S-Tab> "v:lua.snip_jump_prev()" {:expr true})
 (vim.api.nvim_set_keymap :s :<S-Tab> "v:lua.snip_jump_prev()" {:expr true})
+(luasnip.add_snippets :all [(s :ternary
+                               [(i 1 :cond)
+                                (t " ? ")
+                                (i 2 :then)
+                                (t " : ")
+                                (i 3 :else)])])
