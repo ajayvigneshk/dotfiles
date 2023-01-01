@@ -60,6 +60,8 @@
         :ft ["elixir"]})
   (use {1 :AndrewRadev/splitjoin.vim
         :ft ["elixir"]})
+  (use {1 :AndrewRadev/switch.vim
+        :ft ["elixir"]})
   (use {1 "tpope/vim-obsession"
         :cmd ["Obsession"]
         })
