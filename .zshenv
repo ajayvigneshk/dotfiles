@@ -27,4 +27,7 @@ export CONFIG_DIR="$HOME/.config"
 export ZSH_PLUGINS_DIR="$HOME/.local/share/zsh/plugins"
 export TMUX_PLUGINS_DIR="$HOME/.local/share/tmux/plugins"
 export GPG_TTY=`tty`
+# Required for installing rocks on nvim (needs `python` on PATH) (mac specific I guess)
+# https://stackoverflow.com/questions/5157678/how-do-i-use-brew-installed-python-as-the-default-python
+export PATH="/opt/homebrew/opt/python/libexec/bin:$PATH"
 source ~/.zshenv_others 2> /dev/null || true
