@@ -106,8 +106,6 @@
      ; Might not be able to do opt
      (use {1 :nvim-treesitter/nvim-treesitter-context})
      (use {1 :nvim-treesitter/nvim-treesitter-textobjects})
-           ; https://github.com/wbthomason/packer.nvim/issues/1039
-           ; :commit "e581902a35f315b6998d8354d20cc4a0dfc0cf6e"})
      (use {1 :nvim-treesitter/nvim-treesitter
            :do :TSUpdate})
      (use :elixir-editors/vim-elixir)
