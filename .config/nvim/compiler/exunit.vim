@@ -15,6 +15,7 @@ set cpo-=C
 CompilerSet makeprg=mix\ test
 " My changes
 " This is more of a hack where not matched lines are still on quickfix(as general lines) but folded
+" This does not work for double digit numbers need to fix this
 CompilerSet errorformat=
   \%E\ \ %n)\ %m(%o),
   \%C\ \ \ \ \ %f:%l,
