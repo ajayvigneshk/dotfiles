@@ -22,8 +22,8 @@
   (buf-set-keymap :n :<leader>lr "<cmd>lua vim.lsp.buf.rename()<CR>" opts)
   (buf-set-keymap :n :gr "<cmd>lua vim.lsp.buf.references()<CR>" opts)
   (buf-set-keymap :n :<leader>e "<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>" opts)
-  (buf-set-keymap :n "[d" "<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>" opts)
-  (buf-set-keymap :n "]d" "<cmd>lua vim.lsp.diagnostic.goto_next()<CR>" opts)
+  (buf-set-keymap :n "[d" "<cmd>lua vim.diagnostic.goto_prev()<CR>" opts)
+  (buf-set-keymap :n "]d" "<cmd>lua vim.diagnostic.goto_next()<CR>" opts)
   (buf-set-keymap :n :<leader>q "<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>" opts)
 
   ; (each [k v (pairs   client.resolved_capabilities)]
