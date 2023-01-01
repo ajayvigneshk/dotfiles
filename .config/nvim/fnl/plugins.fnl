@@ -56,13 +56,6 @@
   (use {1 :vim-test/vim-test
         :ft ["elixir"]
         :config "require('conf-vim-test')"})
-  (use {1 :nvim-neotest/neotest
-        :requires {1 :nvim-lua/plenary.nvim
-                   2 :nvim-treesitter/nvim-treesitter
-                   3 :antoinemadec/FixCursorHold.nvim }
-        :config "require('conf-neotest')"}
-       )
-  (use {1 "jfpedroza/neotest-elixir" })
   (use {1 :tpope/vim-projectionist
         :ft ["elixir"]})
   (use {1 :AndrewRadev/splitjoin.vim
