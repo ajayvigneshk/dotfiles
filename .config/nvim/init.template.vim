@@ -19,6 +19,7 @@ set undofile
 "Enable switching buffers without saving
 set hidden
 set cursorline cursorcolumn
+set relativenumber
 "}}}
 "{{{ FZF
 source ~/.config/nvim/fzf.vim
