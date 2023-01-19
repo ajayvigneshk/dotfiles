@@ -21,6 +21,7 @@ augroup ELIXIRMARKS
   "tiger specific
   autocmd BufLeave */handlers/*.ex  normal! mH
   autocmd BufLeave */services/*.ex,*/service/*.ex  normal! mS
+  autocmd BufLeave */workers/*.ex  normal! mW
   autocmd BufLeave */finders/*.ex  normal! mF
   autocmd BufLeave */values/*.ex  normal! mA
   autocmd BufLeave *html.eex  normal! mM
