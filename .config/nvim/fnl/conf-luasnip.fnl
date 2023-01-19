@@ -33,9 +33,20 @@
 (vim.api.nvim_set_keymap :s :<Tab> "v:lua.snip_jump_next()" {:expr true})
 (vim.api.nvim_set_keymap :i :<S-Tab> "v:lua.snip_jump_prev()" {:expr true})
 (vim.api.nvim_set_keymap :s :<S-Tab> "v:lua.snip_jump_prev()" {:expr true})
+; (vim.api.nvim_set_keymap :i :<C-n> :<Plug>luasnip-next-choice {})
+; (vim.api.nvim_set_keymap :s :<C-n> :<Plug>luasnip-next-choice {})
+; (vim.api.nvim_set_keymap :i :<C-p> :<Plug>luasnip-prev-choice {})
+; (vim.api.nvim_set_keymap :s :<C-p> :<Plug>luasnip-prev-choice {})
 (luasnip.add_snippets :all [(s :ternary
                                [(i 1 :cond)
                                 (t " ? ")
                                 (i 2 :then)
                                 (t " : ")
                                 (i 3 :else)])])
+(luasnip.add_snippets :all [(s :trig 
+                               (c 1 
+                                  [(t "Ugh boring, a text node")
+                                   (i nil "At least I can edit something now...")
+                                   (f (fn [args]
+                                        "Still only counts as text!!") {})
+                                   ]))])
