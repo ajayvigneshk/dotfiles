@@ -23,4 +23,17 @@ nnoremap <C-t> <CMD>tabnew<CR>
 inoremap <C-t> <CMD>tabnew<CR>
 " nnoremap <leader>te :tabedit **/*
 " nnoremap <leader>tf :tabfind *
+
+" Toggles quickfix
+" requires asyncrun plugin
+noremap <F9> :call asyncrun#quickfix_toggle(8)<cr>
+" mapping that is unimpaired style
+nnoremap yoq :call asyncrun#quickfix_toggle(8)<cr>
+"}}}
+"{{{ Quick fix niceties
+" Automatically open quickfix when something populates it
+" https://github.com/skywind3000/asyncrun.vim/wiki/Quickfix-Best-Practice
+augroup QUICKFIX
+    autocmd QuickFixCmdPost * call asyncrun#quickfix_toggle(8, 1)
+augroup END
 "}}}
