@@ -39,11 +39,10 @@
         })
   (use {1 :tpope/vim-rsi
         :event ["InsertEnter *" "CmdlineEnter *"]})
-  ; Used primarily for async grep,
-  ; TODO replace this mainly due to it supporting only one job
-  ; with vim-grepper / Dispatch itself when it supports grep
-  (use {1 :skywind3000/asyncrun.vim
-        :cmd ["AsyncRun"]})
+  (use {1 :tmsvg/pear-tree
+        :event ["InsertEnter *" "CmdlineEnter *"]})
+  ; Used primarily for async grep, and quickfix toggling
+  (use {1 :skywind3000/asyncrun.vim})
   (use {1 :tpope/vim-dispatch
         :config "require('conf-dispatch')"
         :cmd ["Dispatch" "Make" "Focus" "Start"]})
