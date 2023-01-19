@@ -32,7 +32,24 @@ if exists('+termguicolors')
 endif
 " Solarized vim config
 set background=@@background@@
-colorscheme solarized8_flat
+colorscheme solarized8
+if has('nvim')
+	if &background ==# "dark"
+		highlight ActiveWindow guibg=#002b36
+		highlight InactiveWindow guibg=#073642
+		set winhighlight=Normal:ActiveWindow,NormalNC:InactiveWindow
+	else
+		highlight ActiveWindow guibg=#fdf6e3
+		highlight InactiveWindow guibg=#eee8d5
+		set winhighlight=Normal:ActiveWindow,NormalNC:InactiveWindow
+	endif
+endif
+" highlights for different search categories
+" Colors from solarized scheme
+highlight Search gui=reverse guifg=#6c71c4
+highlight CurSearch gui=reverse guifg=#d33682
+" This also works for highlight on yank
+highlight IncSearch gui=reverse guifg=#d33682
 " Lightline
 set noshowmode
 let g:lightline = {
@@ -45,8 +62,6 @@ let g:lightline = {
       \   'gitbranch': 'FugitiveHead'
       \ },
       \ }
-" highlight color to magenta
-highlight HighlightedyankRegion guifg=#eee8d5 guibg=#d33682
  "}}}
   "{{{ Source , custom files.
 source $CONFIG_DIR/nvim/custom/Grep.vim
