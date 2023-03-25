@@ -52,7 +52,6 @@
   (use {1 :ajayvigneshk/neoterm
         :ft ["elixir"]
         :config "require('conf-neoterm')"})
-  (use {1 :ggandor/leap.nvim })
   (use {1 :vim-test/vim-test
         :ft ["elixir"]
         :config "require('conf-vim-test')"})
@@ -85,6 +84,10 @@
      (use :tpope/vim-repeat)
      (use :tpope/vim-sensible)
      (use :jamessan/vim-gnupg)
+     (use {
+           1 :ggandor/leap.nvim
+           :config "require('conf-leap')"
+           })
      (use :neovim/nvim-lspconfig) ;cannot be made opt
      (use {1 :hrsh7th/nvim-cmp
            :config "require('conf-nvim-cmp')"
