@@ -37,3 +37,10 @@ augroup QUICKFIX
     autocmd QuickFixCmdPost * call asyncrun#quickfix_toggle(8, 1)
 augroup END
 "}}}
+"{{{ terminal mode mappings
+if has('nvim')
+  tnoremap <Esc> <C-\><C-n>
+  tnoremap <M-[> <Esc>
+  tnoremap <C-v><Esc> <Esc>
+endif
+"}}}
