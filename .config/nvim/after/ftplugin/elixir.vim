@@ -5,12 +5,13 @@ setlocal makeprg=mix
 " buffer / global?
 nnoremap <buffer> <leader>mc :Make compile --warnings-as-errors --ignore-module-conflict<CR>
 nnoremap <buffer> <leader>ml :Make lint --strict<CR>
-setlocal foldexpr=nvim_treesitter#foldexpr()
-setlocal foldmethod=expr
-setlocal nofoldenable
-" set path based on top level dirs(honouring git exclusions)
-" Found somewhere on reddit with comments from romainl
-call git#SetSanePath()
+lua << EOF
+if vim.treesitter.language.require_language("elixir", nil, true) then
+  vim.opt_local.foldexpr = "nvim_treesitter#foldexpr()"
+  vim.opt_local.foldmethod = "expr"
+  vim.opt_local.foldenable = false
+end
+EOF
 " Set marks based on last files
 augroup ELIXIRMARKS
   autocmd!
