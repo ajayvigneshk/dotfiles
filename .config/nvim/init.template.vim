@@ -102,4 +102,7 @@ augroup END
 "}}}
 "{{{ general
 runtime keymaps.vim
+" set path based on top level dirs(honouring git exclusions)
+" Found somewhere on reddit with comments from romainl
+call git#SetSanePath()
 "}}}
