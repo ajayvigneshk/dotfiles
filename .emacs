@@ -16,7 +16,10 @@
 
 ;; add more TODO states
 (setq org-todo-keywords
-  '((sequence "TODO" "IN-PROGRESS" "WAITING" "DONE")))
+  '((sequence "TODO" "IN-PROGRESS" "WAITING" "CANCELLED" "DONE")))
+
+;; asked by emacs window
+(setq package-install-upgrade-built-in t)
 
 ;; Org mode mappings
 (global-set-key (kbd "C-c l") #'org-store-link)
@@ -50,8 +53,9 @@
 (keyboard-translate ?\C-? ?\C-h)  ; translate DEL to 'C-h'.
 
 ;; fonts
-(set-frame-font "JetBrainsMono Nerd Font-20" nil t)
-
+(set-frame-font "CommitMono-18" nil t)
+;; latex previews
+(setq org-format-latex-options (plist-put org-format-latex-options :scale 2.0))
 
 ;; redo functionality
 (evil-set-undo-system 'undo-redo)
@@ -71,8 +75,9 @@
  ;; If there is more than one, they won't work right.
  '(custom-safe-themes
    '("d89e15a34261019eec9072575d8a924185c27d3da64899905f8548cbd9491a36" "4c56af497ddf0e30f65a7232a8ee21b3d62a8c332c6b268c81e9ea99b11da0d3" "fee7287586b17efbfda432f05539b58e86e059e78006ce9237b8732fde991b4c" "f5b6be56c9de9fd8bdd42e0c05fecb002dedb8f48a5f00e769370e4517dde0e8" default))
- '(org-agenda-files nil)
- '(package-selected-packages '(solarized-theme evil sml-mode)))
+ '(org-agenda-files
+   '("~/remote/tasks/foo.org" "~/remote/tasks/remote.org"))
+ '(package-selected-packages '(magit solarized-theme evil sml-mode)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

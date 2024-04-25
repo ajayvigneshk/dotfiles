@@ -6,3 +6,4 @@ alias neomutt=~/.config/mutt/myneomutt.sh
 alias dpsql="docker run --rm -it --network host postgres psql"
 alias dcreatedb="docker run --rm -it --network host postgres createdb"
 alias kcd='kubectl config set-context $(kubectl config current-context) --namespace '
+# alias nnn='nnn -daD -T t'

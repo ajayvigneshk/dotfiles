@@ -191,3 +191,4 @@ autoload bashcompinit && bashcompinit
 complete -C '/usr/local/bin/aws_completer' aws
 
 source ~/.zshrc_others 2> /dev/null || true
+source ~/.zshrc_colima 2> /dev/null || true

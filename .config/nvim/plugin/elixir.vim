@@ -17,4 +17,9 @@ augroup sort_imports
 	autocmd BufWritePre ~/remote/code/tiger/**/*.ex,~/remote/code/tiger/**/*.exs silent! mkview! | silent! g/^\(\(alias\)\@!.\)*$\n\s*alias/+1,/\s*alias.*$\n^\(\(alias\)\@!.\)*$/ sort i
 	autocmd BufWritePost ~/remote/code/tiger/**/*.ex,~/remote/code/tiger/**/*.exs silent! loadview
 augroup end
+" LSP formatter bug on elixir
+" augroup mix_format
+" 	autocmd!
+" 	autocmd BufWritePost ~/remote/code/tiger/**/*.ex,~/remote/code/tiger/**/*.exs silent! !mix format %
+" augroup end
 "}}}

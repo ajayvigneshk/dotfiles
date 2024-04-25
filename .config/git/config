@@ -2,8 +2,11 @@
 	tool = nvimdiff
 [push]
 	default = current
+	autoSetupRemote = true
 [mergetool]
 	prompt = true
+[help]
+	autocorrect = prompt
 [alias]
 	co = checkout
 	br = branch

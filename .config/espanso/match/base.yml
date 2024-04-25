@@ -36,6 +36,8 @@ matches:
       /label ~"backend::done" 
   - trigger: ";now"
     replace: "{{mytime}}"
+  - trigger: ";piex"
+    replace: "tiger/bin/tiger start_iex"
     vars:
       - name: mytime
         type: date

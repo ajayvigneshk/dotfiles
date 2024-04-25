@@ -40,7 +40,9 @@
   (use {1 :tpope/vim-rsi
         :event ["InsertEnter *" "CmdlineEnter *"]})
   (use {1 :tmsvg/pear-tree
-        :event ["InsertEnter *" "CmdlineEnter *"]})
+        :event ["InsertEnter *" "CmdlineEnter *"]
+        :config "require('conf-pear-tree')"
+        })
   ; Used primarily for async grep, and quickfix toggling
   (use {1 :skywind3000/asyncrun.vim})
   (use {1 :tpope/vim-dispatch
@@ -50,7 +52,7 @@
         :keys ["gc" "gcc"]})
   ; only for ft=lang based stuff, for now only elixir
   (use {1 :ajayvigneshk/neoterm
-        :ft ["elixir"]
+        :ft ["elixir" "sml"]
         :config "require('conf-neoterm')"})
   (use {1 :vim-test/vim-test
         :ft ["elixir"]
@@ -60,6 +62,8 @@
   (use {1 :AndrewRadev/splitjoin.vim
         :ft ["elixir"]})
   (use {1 :AndrewRadev/switch.vim
+        :ft ["elixir"]})
+  (use {1 :github/copilot.vim
         :ft ["elixir"]})
   (use {1 "tpope/vim-obsession"
         :cmd ["Obsession"]
@@ -104,6 +108,8 @@
                        :after  :nvim-cmp}
                       {1 :hrsh7th/cmp-buffer
                        :after  :nvim-cmp}
+                      {1 :hrsh7th/cmp-nvim-lsp-signature-help
+                       :after  :nvim-cmp}
                       ]})
      ; Plugins that have after/ftplugin themselves
      ; Might not be able to do opt
@@ -115,4 +121,11 @@
      ; (use :fatih/vim-go)
      (use {1 :bakpakin/fennel.vim
            :ft ["fennel"]})
+     (use {1 :nvim-telescope/telescope.nvim
+           :config "require('conf-telescope')"
+           :requires [
+                      :nvim-lua/plenary.nvim
+                      {1 :nvim-telescope/telescope-fzf-native.nvim
+                       :run :make}
+                      ]})
      )))

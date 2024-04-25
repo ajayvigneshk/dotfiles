@@ -18,6 +18,8 @@ set ignorecase smartcase
 set undofile
 "Enable switching buffers without saving
 set hidden
+"Ask for confirmation (for eg. unsaved buffers being closed)
+set confirm
 set cursorline cursorcolumn
 set relativenumber
 "}}}
@@ -67,12 +69,18 @@ let g:lightline = {
 source $CONFIG_DIR/nvim/custom/Grep.vim
 " Disable default mappings
 " TODO
-source ~/.local/share/nvim/site/pack/packer/start/vim-sandwich/macros/sandwich/keymap/surround.vim
+runtime macros/sandwich/keymap/surround.vim
 source $CONFIG_DIR/nvim/vimwiki.vim
  "}}}
  "{{{ Nnn
+" Use env for consistent usage instead
+" let g:nnn#command = 'nnn -A -d'
 let g:nnn#set_default_mappings = 0
 let g:nnn#replace_netrw = 1
+" It's nice to have native mappings on nnn. The above terminal mappings make
+" it awful for nnn
+autocmd FileType nnn tnoremap <buffer> <Esc> <Esc>
+autocmd FileType nnn tnoremap <buffer> <C-w> <C-\><C-n><C-w>
 " Start nnn in the current file's directory (this is easier to do in vimscript
 " than lua / fnl)
 nnoremap <expr> <leader>n filereadable(expand('%'))==1 ? '<CMD>NnnPicker %:p<CR>' : '<CMD>NnnPicker %:p:h<CR>'
@@ -105,4 +113,9 @@ runtime keymaps.vim
 " set path based on top level dirs(honouring git exclusions)
 " Found somewhere on reddit with comments from romainl
 call git#SetSanePath()
+"}}}
+"{{{abbreviations
+iab :positive: ✅
+iab :negative: 🚫
+iab :mixed: ⚠️
 "}}}

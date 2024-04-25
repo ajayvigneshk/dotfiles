@@ -37,6 +37,12 @@
 ; (vim.api.nvim_set_keymap :s :<C-n> :<Plug>luasnip-next-choice {})
 ; (vim.api.nvim_set_keymap :i :<C-p> :<Plug>luasnip-prev-choice {})
 ; (vim.api.nvim_set_keymap :s :<C-p> :<Plug>luasnip-prev-choice {})
+
+; TODO Set this only for elixir test files
+(luasnip.add_snippets :all [(s {:trig :imox
+                                :dscr "import Mox for tests and setup verify_on_exit"}
+                               [(t ["import Mox" 
+                               "setup :verify_on_exit!"])])])
 (luasnip.add_snippets :all [(s :ternary
                                [(i 1 :cond)
                                 (t " ? ")
