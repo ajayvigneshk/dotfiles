@@ -1,0 +1,36 @@
+live_config_reload = true
+working_directory = "None"
+
+[colors]
+draw_bold_text_with_bright_colors = true
+
+[debug]
+log_level = "Warn"
+persistent_logging = false
+print_events = false
+# ref_test = false
+render_timer = false
+
+[font]
+size = 18.0
+
+[font.bold]
+family = "JetBrains Mono"
+style = "Bold"
+
+[font.italic]
+family = "JetBrains Mono"
+style = "Medium Italic"
+
+[font.normal]
+family = "JetBrains Mono"
+style = "Medium"
+
+[shell]
+args = ["-l", "-c", "tmux attach -t personal || tmux new -s personal"]
+program = "/bin/zsh"
+
+[window]
+decorations = "buttonless"
+dynamic_padding = true
+dynamic_title = true

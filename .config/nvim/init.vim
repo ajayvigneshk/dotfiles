@@ -33,7 +33,7 @@ if exists('+termguicolors')
   set termguicolors
 endif
 " Solarized vim config
-set background=@@background@@
+set background=dark
 colorscheme solarized8
 if has('nvim')
 	if &background ==# "dark"

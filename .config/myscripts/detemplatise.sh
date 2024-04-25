@@ -1,8 +1,15 @@
 #!/bin/bash
-sed "s/@@background@@/$1/g" ~/.config/nvim/init.template.vim > ~/.config/nvim/init.vim
-sed "s/@@background@@/$1/g" ~/.config/alacritty/custom/colorschemes.template.yml > ~/.config/alacritty/custom/colorschemes.yml
-sed "s/@@background@@/$1/g" ~/.tmux.template.conf > ~/.tmux.conf
+next_color=$1
+if [[ "$next_color" == "dark" ]]; then
+	current_color="light"
+else
+	current_color="dark"
+fi
+sed -i'' -e "s/set background=$current_color/set background=$next_color/g" ~/.config/nvim/init.vim
+sed -i'' -e "s/solarized_$current_color.toml/solarized_$next_color.toml/g" ~/.config/alacritty/alacritty.toml
+sed -i'' -e "s/vimstatusline3-$current_color/vimstatusline3-$next_color/g"  ~/.tmux.conf
 tmux source-file ~/.tmux.conf 
+# Below is old and useless (I think)
 if [ "$2" == "presentation" ]; then
 	if [ "$1" == "dark" ]; then
 		GUI_BG=#586e75
