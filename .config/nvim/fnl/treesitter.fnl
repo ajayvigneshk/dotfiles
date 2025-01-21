@@ -18,11 +18,11 @@
                               :ic "@class.inner"
                               :aa "@parameter.outer"
                               :ia "@parameter.inner"}}}})
-(ts-config-setup {:textobjects 
-                  {:swap 
-                   {:enable true
-                    :swap_next {:<leader>a "@parameter.inner"}
-                    :swap_previous {:<leader>A "@parameter.inner"}}}})
+; (ts-config-setup {:textobjects 
+;                   {:swap 
+;                    {:enable true
+;                     :swap_next {:<leader>a "@parameter.inner"}
+;                     :swap_previous {:<leader>A "@parameter.inner"}}}})
 (ts-config-setup {:textobjects 
                   {:move 
                    {:enable true

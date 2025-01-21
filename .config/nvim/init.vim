@@ -33,7 +33,7 @@ if exists('+termguicolors')
   set termguicolors
 endif
 " Solarized vim config
-set background=dark
+set background=light
 colorscheme solarized8
 if has('nvim')
 	if &background ==# "dark"
@@ -118,4 +118,23 @@ call git#SetSanePath()
 iab :positive: ✅
 iab :negative: 🚫
 iab :mixed: ⚠️
+"}}}
+"{{{experimental
+function! HandleGf()
+  try
+    normal! gf
+  catch /.*/
+    if &filetype ==# 'elixir'
+      if confirm("File not found. Create it?", "&Yes\n&No", 1) == 1
+        silent! execute "e lib/" . elixir#util#get_filename(expand('<cfile>')) . ".ex"
+      endif
+    else
+      throw v:exception
+    endif
+  endtry
+endfunction
+nnoremap gf :call HandleGf()<CR>
+
+" Auto-create parent directories (except for URIs "://").
+au BufWritePre,FileWritePre * if @% !~# '\(://\)' | call mkdir(expand('<afile>:p:h'), 'p') | endif
 "}}}

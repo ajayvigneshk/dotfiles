@@ -84,21 +84,46 @@
 (vim.api.nvim_create_autocmd :LspDetach
                              {:callback (fn [event]
                                           (vim.lsp.buf.clear_references)
+                                          (local client
+                                                 (vim.lsp.get_client_by_id event.data.client_id))
+                                          (when (and client
+                                                     client.server_capabilities.documentHighlightProvider)
                                           (vim.api.nvim_clear_autocmds {:buffer event.buf
-                                                                        :group :kickstart-lsp-highlight}))
+                                                                        :group :kickstart-lsp-highlight})))
                               :group (vim.api.nvim_create_augroup :kickstart-lsp-detach
                                                                   {:clear true})})
 
 ; setup different lsp configs
 (local lspconfig (require :lspconfig))
+
+; start lexical config
+; this for some reason uses default_config that can't be retro-fit above I think
+
+(local configs (require :lspconfig.configs))
+(local lexical-config {:cmd [:/Users/ajayvigneshk/personal/projects/lexical/_build/dev/package/lexical/bin/start_lexical.sh]
+                       :filetypes [:elixir :eelixir :heex]
+                       :settings {}})
+(when (not configs.lexical)
+  (set configs.lexical
+       {:default_config {:cmd lexical-config.cmd
+                         :filetypes lexical-config.filetypes
+                         :root_dir (fn [fname]
+                                     (or ((lspconfig.util.root_pattern :mix.exs
+                                                                       :.git) fname)
+                                         (vim.loop.os_homedir)))
+                         :settings lexical-config.settings}}))
+(lspconfig.lexical.setup {})
+
 (local lsp-config-setup
-       {:elixirls {:cmd [(.. (vim.fn.expand :$HOME)
-                             :/personal/projects/elixir-ls/release/language_server.sh)]
-                   ; :cmd  [(.. (vim.fn.stdpath "data") :/lsp/elixir-ls/language_server.sh)]
-                   :settings {:elixirLS {:dialyzerEnabled false
-                                         ; :suggestSpecs true
-                                         :signatureAfterComplete true
-                                         :enableTestLenses true}}}
+      {
+      ;  :elixirls {:cmd [(.. (vim.fn.expand :$HOME)
+      ;                        :/personal/projects/elixir-ls/release/language_server.sh)]
+      ;              ; :cmd  [(.. (vim.fn.stdpath "data") :/lsp/elixir-ls/language_server.sh)]
+      ;              :settings {:elixirLS {:dialyzerEnabled false
+      ;                                    ; :suggestSpecs true
+      ;                                    :signatureAfterComplete true
+      ;                                    :enableTestLenses true}}}
+        :lexical configs.lexical
         :gopls {}
         :texlab {:cmd [:texlab]}})
 

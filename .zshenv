@@ -31,6 +31,8 @@ export GPG_TTY=`tty`
 # Required for installing rocks on nvim (needs `python` on PATH) (mac specific I guess)
 # https://stackoverflow.com/questions/5157678/how-do-i-use-brew-installed-python-as-the-default-python
 export PATH="/opt/homebrew/opt/python/libexec/bin:$PATH"
+export PATH="/Users/ajayvigneshk/Library/Python/3.9/bin:$PATH"
 export NNN_OPTS="dADC"
 export NNN_ORDER="t:$HOME/Downloads;t:$HOME/remote/code/tiger/work_dir"
 source ~/.zshenv_others 2> /dev/null || true
+. "$HOME/.cargo/env"

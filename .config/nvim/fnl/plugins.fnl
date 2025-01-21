@@ -51,12 +51,24 @@
   (use {1 :tpope/vim-commentary
         :keys ["gc" "gcc"]})
   ; only for ft=lang based stuff, for now only elixir
-  (use {1 :ajayvigneshk/neoterm
-        :ft ["elixir" "sml"]
-        :config "require('conf-neoterm')"})
-  (use {1 :vim-test/vim-test
-        :ft ["elixir"]
-        :config "require('conf-vim-test')"})
+  ; (use {1 :ajayvigneshk/neoterm
+  ;       :ft ["elixir" "sml"]
+  ;       :config "require('conf-neoterm')"})
+  (use {1 :akinsho/toggleterm.nvim
+      :config "require('conf-toggleterm')"
+      :tag "*"})
+  ; (use {1 :vim-test/vim-test
+  ;       :ft ["elixir"]
+  ;       :config "require('conf-vim-test')"})
+  (use {1 :nvim-neotest/neotest
+      :requires [:nvim-neotest/nvim-nio
+                 :nvim-lua/plenary.nvim
+                 ; :antoinemadec/FixCursorHold.nvim
+                 :nvim-treesitter/nvim-treesitter
+                 ; :jfpedroza/neotest-elixir]
+                 "~/personal/projects/vim_plugins/neotest-elixir/"]
+      :config "require('conf-neotest')"})
+  ; (use {1 "jfpedroza/neotest-elixir" })
   (use {1 :tpope/vim-projectionist
         :ft ["elixir"]})
   (use {1 :AndrewRadev/splitjoin.vim
@@ -64,7 +76,7 @@
   (use {1 :AndrewRadev/switch.vim
         :ft ["elixir"]})
   (use {1 :github/copilot.vim
-        :ft ["elixir"]})
+        :ft ["elixir" "typescript"]})
   (use {1 "tpope/vim-obsession"
         :cmd ["Obsession"]
         })
@@ -79,10 +91,15 @@
  (fn [use]
    (do
      (use :wbthomason/packer.nvim)
-     (use :rktjmp/hotpot.nvim)
+      (use :rktjmp/hotpot.nvim
+           :branch :main)
      (lazy_load_plugins use)
      (use :lifepillar/vim-solarized8)
-     (use :itchyny/lightline.vim)
+     ; (use :itchyny/lightline.vim)
+     (use {1 :nvim-lualine/lualine.nvim
+      :requires [{1 :nvim-tree/nvim-web-devicons}
+                 {1 :nvim-lua/lsp-status.nvim}]
+      :config "require('conf-lualine')"})
      (use :machakann/vim-sandwich)
      (use :tpope/vim-unimpaired)
      (use :tpope/vim-repeat)
@@ -125,8 +142,21 @@
      (use {1 :nvim-telescope/telescope.nvim
            :config "require('conf-telescope')"
            :requires [
+                      :nvim-telescope/telescope-live-grep-args.nvim
                       :nvim-lua/plenary.nvim
                       {1 :nvim-telescope/telescope-fzf-native.nvim
                        :run :make}
                       ]})
+     ; experimental ones below
+     ; Not what I expected, the popup is not very useful (maybe a better timeout helps?)
+     ; (use {1 :folke/which-key.nvim
+     ;  :config (fn []
+     ;            (set vim.o.timeout true)
+     ;            (set vim.o.timeoutlen 300)
+     ;            ((. (require :which-key) :setup) {}))})
+     ; (Not sure why I even want this, toggleterm seems to cover all my needs for named terminal instances)
+     ; (use {1 :ThePrimeagen/harpoon
+     ;  :branch :harpoon2
+     ;  :requires [[:nvim-lua/plenary.nvim]]
+     ;  :config "require('conf-harpoon')"})
      )))

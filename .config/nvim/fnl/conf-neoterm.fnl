@@ -6,7 +6,7 @@
 ; (vim.api.nvim_set_var "neoterm_size" 50)
 (vim.api.nvim_set_var "neoterm_default_mod" "botright")
 ; using a `y` prefix like vim unimpaired for toggle
-(vim.api.nvim_set_keymap :n :ytt ":Ttoggle<CR>" {:noremap true :silent true})
+; (vim.api.nvim_set_keymap :n :ytt ":Ttoggle<CR>" {:noremap true :silent true})
 ; (vim.api.nvim_set_keymap "n" "<leader>tl" ":<c-u>exec v:count.'Tclear'<cr>" {:noremap true :silent true})
 (vim.api.nvim_set_keymap :n :gx "<Plug>(neoterm-repl-send)" {:noremap false :silent true})
 (vim.api.nvim_set_keymap :x :gx "<Plug>(neoterm-repl-send)" {:noremap false :silent true})

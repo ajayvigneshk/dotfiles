@@ -21,3 +21,8 @@
 	path = ~/.config/git/config-personal.inc
 [include]
 	path = ~/.config/git/config-others.inc
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true

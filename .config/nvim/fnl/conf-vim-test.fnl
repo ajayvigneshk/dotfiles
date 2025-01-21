@@ -1,4 +1,4 @@
-(vim.api.nvim_set_var "test#strategy" :dispatch)
+(vim.api.nvim_set_var "test#strategy" :toggleterm)
 (vim.api.nvim_set_keymap :n :<Leader>tn ":TestNearest<CR>" {:noremap true
                                                            :silent true})
 (vim.api.nvim_set_keymap :n :<Leader>tf ":TestFile<CR>" {:noremap true
